@@ -4,8 +4,6 @@ import theme from '../libs/theme'
 
 export default class Document extends NextDocument {
   render() {
-    console.log(theme)
-
     return (
       <Html lang="en">
         <Head />
