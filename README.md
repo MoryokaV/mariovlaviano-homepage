@@ -1,2 +1,1 @@
-# mariovlaviano-homepage
-Mario Vlaviano Website
+# Mario's Website
