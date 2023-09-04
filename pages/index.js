@@ -64,8 +64,12 @@ const Page = () => {
           </BioSection>
           <BioSection>
             <BioYear>2022</BioYear>
-            Created FlutterLab, a mobile development course for students with ages between 12 and 18 meant to spark
-            interest in programming.
+            Created{' '}
+            <Link as={NextLink} href="/">
+              FlutterLab
+            </Link>
+            , a mobile development course for students with ages between 12 and 18 meant to spark interest in
+            programming.
           </BioSection>
           <BioSection>
             <BioYear>2023</BioYear>
