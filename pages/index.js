@@ -85,7 +85,7 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             I ♥
           </Heading>
-          <Paragraph>Sports cars, Coffee, Biking, Swimming, Art, Music, Public speaking, Entrepreneurship</Paragraph>
+          <Paragraph>Sports cars, Coffee, Art, <Link as={NextLink} href="/">Entrepreneurship</Link>, Biking, Music, Swimming, Public speaking, </Paragraph>
         </Section>
       </Container>
     </Layout>
