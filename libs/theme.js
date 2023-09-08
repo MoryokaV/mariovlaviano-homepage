@@ -36,7 +36,9 @@ const fonts = {
 }
 
 const colors = {
-  grassTeal: '#88ccca'
+  grassTeal: '#88ccca',
+  lightBodyDimmed: '#dbd3c8',
+  darkBodyDimmed: '#1a1a1c'
 }
 
 const config = {
