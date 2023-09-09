@@ -1,9 +1,7 @@
-import { Box, Circle, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react'
-import Image from 'next/image'
-
-import lightDesk from '../public/images/desk-light.jpg'
-import darkDesk from '../public/images/desk-dark.jpg'
+import { Box, Circle, Flex, HStack, Text, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
+import { chakra } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+
 
 function getRandomDate(start, end) {
   const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
@@ -26,6 +24,27 @@ function getRandomDate(start, end) {
   }
 }
 
+/*const ArrowRight = styled.div`
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid ${(props) => props.color};
+  border-bottom: 10px solid transparent;
+  background-color: ${(props) => props.back}; 
+`*/
+
+const ArrowRight = chakra(Box, {
+  shouldForwardProp: prop => shouldForwardProp(prop),
+  baseStyle: {
+    width: 0,
+    height: 0,
+    borderTop: "10px solid transparent",
+    borderLeft: "10px solid black",
+    borderBottom: "10px solid transparent",
+    bg: "transparent",
+  }
+});
+
 const Hero = () => {
   const [date, setDate] = useState({})
   const [loading, setLoading] = useState(true)
@@ -36,8 +55,8 @@ const Hero = () => {
   }, [])
 
   return (
-    <Box
-      w="100%"
+    <Flex
+      direction="column"
       h={[250, 300, 380]}
       mt="3"
       mb="4"
@@ -60,9 +79,18 @@ const Hero = () => {
       {!loading && (
         <Box h="100%" fontFamily="mono" fontSize="xs" p={2}>
           <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys002`}</Text>
+          <Text><Text as="span" color="tokyoRed">mario</Text>@<Text as="span" color="tokyoYellow">macbook</Text> ~ <Text as="span" color="tokyoBrightGreen">$</Text> tmux</Text>
+          <Text><Text as="span" color="tokyoRed">mario</Text>@<Text as="span" color="tokyoYellow">macbook</Text> ~ <Text as="span" color="tokyoBrightGreen">$</Text></Text>
         </Box>
       )}
-    </Box>
+      {!loading && (
+      <Flex bg={useColorModeValue('tmuxStatusBgLight', 'tmuxStatusBgDark')} lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
+        <Box bg="#f0e7db" color="black" px="2">0</Box><ArrowRight borderLeftColor="#f0e7db" bg="#93a1a1"/>
+        <Box bg="#93a1a1" color="black" px="2">moryoka</Box><ArrowRight borderLeftColor="#93a1a1"/>
+        <ArrowRight borderLeftColor={useColorModeValue("tmuxStatusBgLight", "tmuxStatusBgDark")} bg="#f0e7db"/><Box bg="#f0e7db" color="black" px="2">0</Box><ArrowRight borderLeftColor="#f0e7db" bg={useColorModeValue("tmuxStatusBgLight", "tmuxStatusBgDark")}/>
+      </Flex>
+      )}
+    </Flex>
   )
   /*
   return (

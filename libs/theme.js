@@ -38,7 +38,13 @@ const fonts = {
 const colors = {
   grassTeal: '#88ccca',
   lightBodyDimmed: '#dbd3c8',
-  darkBodyDimmed: '#1a1a1c'
+  darkBodyDimmed: '#1a1a1c',
+  tokyoRed: '#ff7a93',
+  tokyoBrightGreen: '#b9f27c',
+  tokyoBlue: '#7da6ff',
+  tokyoYellow: '#E0AF68',
+  tmuxStatusBgDark: '#2a2a2e',
+  tmuxStatusBgLight: '#2a2a2e'
 }
 
 const config = {
