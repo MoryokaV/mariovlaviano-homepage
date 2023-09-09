@@ -1,4 +1,4 @@
-import { Box, Circle, Flex, HStack, Text, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
+import { Box, Circle, Flex, HStack, Spacer, Text, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
 import { chakra } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
@@ -45,6 +45,29 @@ const ArrowRight = chakra(Box, {
   }
 });
 
+const OutlineArrowRight = chakra(Box, {
+  shouldForwardProp: prop => shouldForwardProp(prop),
+  baseStyle: {
+    width: "11px",
+    height: "11px",
+    borderTop: "1px solid gray",
+    borderRight: "1px solid gray",
+    transform: "rotate(45deg) translateY(50%)"
+  }
+});
+
+const ArrowLeft = chakra(Box, {
+  shouldForwardProp: prop => shouldForwardProp(prop),
+  baseStyle: {
+    width: 0,
+    height: 0,
+    borderTop: "10px solid transparent",
+    borderRight: "10px solid black",
+    borderBottom: "10px solid transparent",
+    bg: "transparent",
+  }
+});
+
 const Hero = () => {
   const [date, setDate] = useState({})
   const [loading, setLoading] = useState(true)
@@ -58,8 +81,8 @@ const Hero = () => {
     <Flex
       direction="column"
       h={[250, 300, 380]}
-      mt="3"
-      mb="4"
+      mt="4"
+      mb="6"
       borderRadius="lg"
       borderWidth="1px"
       borderColor={useColorModeValue('blackAlpha.300', '#393940')}
@@ -87,7 +110,13 @@ const Hero = () => {
       <Flex bg={useColorModeValue('tmuxStatusBgLight', 'tmuxStatusBgDark')} lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
         <Box bg="#f0e7db" color="black" px="2">0</Box><ArrowRight borderLeftColor="#f0e7db" bg="#93a1a1"/>
         <Box bg="#93a1a1" color="black" px="2">moryoka</Box><ArrowRight borderLeftColor="#93a1a1"/>
-        <ArrowRight borderLeftColor={useColorModeValue("tmuxStatusBgLight", "tmuxStatusBgDark")} bg="#f0e7db"/><Box bg="#f0e7db" color="black" px="2">0</Box><ArrowRight borderLeftColor="#f0e7db" bg={useColorModeValue("tmuxStatusBgLight", "tmuxStatusBgDark")}/>
+        <ArrowRight borderLeftColor={useColorModeValue("tmuxStatusBgLight", "tmuxStatusBgDark")} bg="#f0e7db"/><Box bg="#f0e7db" color="black" px="2">0</Box><ArrowRight borderLeftColor="#f0e7db" bg="tmuxActiveTab"/>
+        <Box bg="tmuxActiveTab" px="3">zsh</Box><ArrowRight borderLeftColor="tmuxActiveTab" />
+        <Box px="2" fontWeight="normal" color="gray">1</Box><OutlineArrowRight/><Box color="gray" px="2" fontWeight="normal">nvim</Box>
+
+        <Spacer/>
+        
+        <ArrowLeft borderRightColor="#657b83"/><ArrowLeft borderRightColor="#93a1a1" bg="#657b83"/><Box px="2" bg="#93a1a1" color="black">192.168.0.112</Box>
       </Flex>
       )}
     </Flex>

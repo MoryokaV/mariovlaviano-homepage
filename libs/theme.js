@@ -44,7 +44,8 @@ const colors = {
   tokyoBlue: '#7da6ff',
   tokyoYellow: '#E0AF68',
   tmuxStatusBgDark: '#2a2a2e',
-  tmuxStatusBgLight: '#2a2a2e'
+  tmuxStatusBgLight: '#2a2a2e',
+  tmuxActiveTab: "#017395"
 }
 
 const config = {
