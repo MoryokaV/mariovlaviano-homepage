@@ -40,11 +40,14 @@ const colors = {
   lightBodyDimmed: '#dbd3c8',
   darkBodyDimmed: '#1a1a1c',
   tokyoRed: '#ff7a93',
+  solarizedRed: '#c14935',
   tokyoBrightGreen: '#b9f27c',
+  solarizedGreen: '#859900',
   tokyoBlue: '#7da6ff',
   tokyoYellow: '#E0AF68',
+  solarizedYellow: '#b58900',
   tmuxStatusBgDark: '#2a2a2e',
-  tmuxStatusBgLight: '#2a2a2e',
+  tmuxStatusBgLight: '#ded9c5',
   tmuxActiveTab: "#017395"
 }
 

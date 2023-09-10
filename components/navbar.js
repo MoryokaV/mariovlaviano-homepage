@@ -53,17 +53,15 @@ const Navbar = props => {
       {...props}
     >
       <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="space-between">
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <Logo />
-          </Heading>
-        </Flex>
+        <Heading as="h1" size="lg" letterSpacing={'tighter'} mr={5}>
+          <Logo />
+        </Heading>
 
         <Stack
           direction={{ base: 'column', md: 'row' }}
           display={{ base: 'none', md: 'flex' }}
           width={{ base: 'full', md: 'auto' }}
-          alignItems="center"
+          align="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
@@ -72,6 +70,9 @@ const Navbar = props => {
           </LinkItem>
           <LinkItem href="/posts" path={path}>
             Posts
+          </LinkItem>
+          <LinkItem href="/tools" path={path}>
+            Tools
           </LinkItem>
         </Stack>
 
@@ -89,6 +90,9 @@ const Navbar = props => {
                 </MenuItem>
                 <MenuItem as={MenuLink} href="/posts">
                   Posts
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/tools">
+                  Tools
                 </MenuItem>
               </MenuList>
             </Menu>

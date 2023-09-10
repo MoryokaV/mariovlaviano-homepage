@@ -1,7 +1,6 @@
-import { Box, Circle, Flex, HStack, Spacer, Text, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
+import { Box, Center, Circle, Flex, HStack, Spacer, Spinner, Text, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
 import { chakra } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-
 
 function getRandomDate(start, end) {
   const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
@@ -24,15 +23,6 @@ function getRandomDate(start, end) {
   }
 }
 
-/*const ArrowRight = styled.div`
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-left: 10px solid ${(props) => props.color};
-  border-bottom: 10px solid transparent;
-  background-color: ${(props) => props.back}; 
-`*/
-
 const ArrowRight = chakra(Box, {
   shouldForwardProp: prop => shouldForwardProp(prop),
   baseStyle: {
@@ -52,7 +42,7 @@ const OutlineArrowRight = chakra(Box, {
     height: "11px",
     borderTop: "1px solid gray",
     borderRight: "1px solid gray",
-    transform: "rotate(45deg) translateY(50%)"
+    transform: "rotate(45deg) translateY(60%)"
   }
 });
 
@@ -69,15 +59,31 @@ const ArrowLeft = chakra(Box, {
 });
 
 const Hero = () => {
+  const [yourIp, setYourIp] = useState("")
   const [date, setDate] = useState({})
   const [loading, setLoading] = useState(true)
 
+  // Colors
+  const terminalBorderColor = useColorModeValue('blackAlpha.300', '#393940')
+  const terminalTopbarColior = useColorModeValue('lightBodyDimmed', 'darkBodyDimmed')
+  const tmuxStatusLineColor = useColorModeValue('tmuxStatusBgLight', 'tmuxStatusBgDark')
+  const tmuxBlockFg = useColorModeValue('#f0e7db', 'black')
+  const tmuxActiveTabBg = useColorModeValue('#2aa198', 'tmuxActiveTab')
+  const tmuxBigArrowBg = useColorModeValue('#f4f0e9', '#f0e7db')
+ 
+  const fetchClientIp = async () => {
+    const data = await fetch('https://api.ipify.org?format=json').then(response => response.json())
+
+    setYourIp(data.ip)
+    setLoading(false)
+  }
+
   useEffect(() => {
     setDate(getRandomDate(new Date(2012, 0, 1), new Date()))
-    setTimeout(() => setLoading(false), 250)
+    fetchClientIp();
   }, [])
 
-  return (
+  return !loading ? (
     <Flex
       direction="column"
       h={[250, 300, 380]}
@@ -85,10 +91,10 @@ const Hero = () => {
       mb="6"
       borderRadius="lg"
       borderWidth="1px"
-      borderColor={useColorModeValue('blackAlpha.300', '#393940')}
+      borderColor={terminalBorderColor}
       overflow="hidden"
     >
-      <Flex py="2" px="3" gap="3" justify="space-between" bg={useColorModeValue('lightBodyDimmed', 'darkBodyDimmed')}>
+      <Flex py="2" px="3" gap="3" justify="space-between" bg={terminalTopbarColior}>
         <HStack spacing="8px">
           <Circle size="12px" bg="red.400" borderColor="red.500" borderWidth="1px"></Circle>
           <Circle size="12px" bg="yellow.400" borderColor="yellow.500" borderWidth="1px"></Circle>
@@ -99,28 +105,24 @@ const Hero = () => {
         </Text>
         <Box w={{ sm: '50px' }}></Box>
       </Flex>
-      {!loading && (
         <Box h="100%" fontFamily="mono" fontSize="xs" p={2}>
           <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys002`}</Text>
-          <Text><Text as="span" color="tokyoRed">mario</Text>@<Text as="span" color="tokyoYellow">macbook</Text> ~ <Text as="span" color="tokyoBrightGreen">$</Text> tmux</Text>
+          <Text><Text as="span" color="solarizedRed">mario</Text>@<Text as="span" color="solarizedYellow">macbook</Text> ~ <Text as="span" color="solarizedGreen">$</Text> tmux</Text>
           <Text><Text as="span" color="tokyoRed">mario</Text>@<Text as="span" color="tokyoYellow">macbook</Text> ~ <Text as="span" color="tokyoBrightGreen">$</Text></Text>
         </Box>
-      )}
-      {!loading && (
-      <Flex bg={useColorModeValue('tmuxStatusBgLight', 'tmuxStatusBgDark')} lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
-        <Box bg="#f0e7db" color="black" px="2">0</Box><ArrowRight borderLeftColor="#f0e7db" bg="#93a1a1"/>
-        <Box bg="#93a1a1" color="black" px="2">moryoka</Box><ArrowRight borderLeftColor="#93a1a1"/>
-        <ArrowRight borderLeftColor={useColorModeValue("tmuxStatusBgLight", "tmuxStatusBgDark")} bg="#f0e7db"/><Box bg="#f0e7db" color="black" px="2">0</Box><ArrowRight borderLeftColor="#f0e7db" bg="tmuxActiveTab"/>
-        <Box bg="tmuxActiveTab" px="3">zsh</Box><ArrowRight borderLeftColor="tmuxActiveTab" />
+      <Flex bg={tmuxStatusLineColor} lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
+        <Box bg={tmuxBigArrowBg} color="black" px="2">0</Box><ArrowRight borderLeftColor={tmuxBigArrowBg} bg="#93a1a1"/>
+        <Box bg="#93a1a1" color={tmuxBlockFg} px="2">moryoka</Box><ArrowRight borderLeftColor="#93a1a1"/>
+        <ArrowRight borderLeftColor={tmuxStatusLineColor} bg={tmuxBigArrowBg}/><Box bg={tmuxBigArrowBg} color="black" px="2">0</Box><ArrowRight borderLeftColor={tmuxBigArrowBg} bg={tmuxActiveTabBg}/>
+        <Box bg={tmuxActiveTabBg} px="3" color="white">zsh</Box><ArrowRight borderLeftColor={tmuxActiveTabBg} />
         <Box px="2" fontWeight="normal" color="gray">1</Box><OutlineArrowRight/><Box color="gray" px="2" fontWeight="normal">nvim</Box>
 
         <Spacer/>
         
-        <ArrowLeft borderRightColor="#657b83"/><ArrowLeft borderRightColor="#93a1a1" bg="#657b83"/><Box px="2" bg="#93a1a1" color="black">192.168.0.112</Box>
+        <ArrowLeft borderRightColor="#657b83"/><ArrowLeft borderRightColor="#93a1a1" bg="#657b83"/><Box px="2" bg="#93a1a1" color={tmuxBlockFg}>{yourIp}</Box>
       </Flex>
-      )}
     </Flex>
-  )
+  ) : <Center h={[250, 300, 380]} mt="4" mb="6"><Spinner emptyColor="whiteAlpha.500" color="gray.400" size="xl" thickness="3px"/></Center> 
   /*
   return (
 
