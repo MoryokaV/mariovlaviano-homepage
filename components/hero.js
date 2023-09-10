@@ -1,6 +1,7 @@
 import { Box, Center, Circle, Flex, HStack, Spacer, Spinner, Text, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
 import { chakra } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 function getRandomDate(start, end) {
   const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
@@ -63,6 +64,9 @@ const Hero = () => {
   const [date, setDate] = useState({})
   const [loading, setLoading] = useState(true)
 
+  const terminalWindowShadow = useColorModeValue("xl", "dark-lg")
+
+
   const fetchClientIp = async () => {
     const data = await fetch('https://api.ipify.org?format=json').then(response => response.json())
 
@@ -77,15 +81,22 @@ const Hero = () => {
 
   return !loading ? (
     <Flex
+      as={motion.div}
       direction="column"
       h={[250, 300, 380]}
       mt="4"
-      mb="6"
+      mb="8"
       borderRadius="lg"
       borderWidth="1px"
       borderColor="terminalBorder"
       overflow="hidden"
+      shadow={terminalWindowShadow}
+      initial={{scale: 0.5}}
+      animate={{scale: 1}}
+      whileHover={{scale: 1.02}}
+      transition={{duration: 3}}
     >
+      {/* Topbar */}
       <Flex py="2" px="3" gap="3" justify="space-between" bg="bodyDimmed">
         <HStack spacing="8px">
           <Circle size="12px" bg="red.400" borderColor="red.500" borderWidth="1px"></Circle>
@@ -97,11 +108,15 @@ const Hero = () => {
         </Text>
         <Box w={{ sm: '50px' }}></Box>
       </Flex>
-        <Box h="100%" fontFamily="mono" fontSize="xs" p={2}>
-          <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys002`}</Text>
-          <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGreen">$</Text> tmux</Text>
-          <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGree">$</Text></Text>
-        </Box>
+
+      {/* Main content */}
+      <Box h="100%" fontFamily="mono" fontSize="xs" p={2}>
+        <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys002`}</Text>
+        <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGreen">$ </Text>tmux</Text>
+        <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGreen">$ </Text>git pull</Text>
+      </Box>
+
+      {/* Tmux statusline */}
       <Flex bg="tmuxStatusBg" lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
         <Box bg="tmuxBigArrowBg" color="black" px="2">0</Box><ArrowRight borderLeftColor="tmuxBigArrowBg" bg="tmuxBlockPrimaryBg"/>
         <Box bg="tmuxBlockPrimaryBg" color="tmuxBlockFg" px="2">moryoka</Box><ArrowRight borderLeftColor="tmuxBlockPrimaryBg"/>
