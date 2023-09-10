@@ -37,18 +37,50 @@ const fonts = {
 
 const colors = {
   grassTeal: '#88ccca',
-  lightBodyDimmed: '#dbd3c8',
-  darkBodyDimmed: '#1a1a1c',
-  tokyoRed: '#ff7a93',
-  solarizedRed: '#c14935',
-  tokyoBrightGreen: '#b9f27c',
-  solarizedGreen: '#859900',
   tokyoBlue: '#7da6ff',
-  tokyoYellow: '#E0AF68',
-  solarizedYellow: '#b58900',
-  tmuxStatusBgDark: '#2a2a2e',
-  tmuxStatusBgLight: '#ded9c5',
-  tmuxActiveTab: "#017395"
+  tmuxBlockPrimaryBg: '#93a1a1',
+  tmuxBlockSecondaryBg: '#657b83',
+}
+
+const semanticTokens = {
+  colors: {
+    bodyDimmed: {
+      default: '#dbd3c8',
+      _dark: '#1a1a1c'
+    },
+    terminalBorder: {
+      default: 'blackAlpha.300', 
+      _dark: '#393940'
+    },
+    termRed: {
+      default: '#c14935',
+      _dark: '#ff7a93'
+    },
+    termGreen: {
+      default: '#859900',
+      _dark: '#b9f27c'
+    },
+    termYellow: {
+      default: '#b58900',
+      _dark: '#E0AF68'
+    },
+    tmuxStatusBg: {
+      default: '#ded9c5',
+      _dark: '#2a2a2e'
+    },
+    tmuxActiveTabBg: {
+      default: '#2aa198', 
+      _dark: '#017395'
+    },
+    tmuxBigArrowBg: {
+      default: '#f4f0e9', 
+      _dark: '#f0e7db'
+    },
+    tmuxBlockFg: {
+      default: '#f0e7db', 
+      _dark: 'black'
+    }
+  }
 }
 
 const config = {
@@ -56,6 +88,6 @@ const config = {
   useSystemColorMode: true
 }
 
-const theme = extendTheme({ config, styles, components, fonts, colors })
+const theme = extendTheme({ config, styles, components, fonts, colors, semanticTokens })
 
 export default theme

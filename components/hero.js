@@ -63,14 +63,6 @@ const Hero = () => {
   const [date, setDate] = useState({})
   const [loading, setLoading] = useState(true)
 
-  // Colors
-  const terminalBorderColor = useColorModeValue('blackAlpha.300', '#393940')
-  const terminalTopbarColior = useColorModeValue('lightBodyDimmed', 'darkBodyDimmed')
-  const tmuxStatusLineColor = useColorModeValue('tmuxStatusBgLight', 'tmuxStatusBgDark')
-  const tmuxBlockFg = useColorModeValue('#f0e7db', 'black')
-  const tmuxActiveTabBg = useColorModeValue('#2aa198', 'tmuxActiveTab')
-  const tmuxBigArrowBg = useColorModeValue('#f4f0e9', '#f0e7db')
- 
   const fetchClientIp = async () => {
     const data = await fetch('https://api.ipify.org?format=json').then(response => response.json())
 
@@ -91,10 +83,10 @@ const Hero = () => {
       mb="6"
       borderRadius="lg"
       borderWidth="1px"
-      borderColor={terminalBorderColor}
+      borderColor="terminalBorder"
       overflow="hidden"
     >
-      <Flex py="2" px="3" gap="3" justify="space-between" bg={terminalTopbarColior}>
+      <Flex py="2" px="3" gap="3" justify="space-between" bg="bodyDimmed">
         <HStack spacing="8px">
           <Circle size="12px" bg="red.400" borderColor="red.500" borderWidth="1px"></Circle>
           <Circle size="12px" bg="yellow.400" borderColor="yellow.500" borderWidth="1px"></Circle>
@@ -107,19 +99,19 @@ const Hero = () => {
       </Flex>
         <Box h="100%" fontFamily="mono" fontSize="xs" p={2}>
           <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys002`}</Text>
-          <Text><Text as="span" color="solarizedRed">mario</Text>@<Text as="span" color="solarizedYellow">macbook</Text> ~ <Text as="span" color="solarizedGreen">$</Text> tmux</Text>
-          <Text><Text as="span" color="tokyoRed">mario</Text>@<Text as="span" color="tokyoYellow">macbook</Text> ~ <Text as="span" color="tokyoBrightGreen">$</Text></Text>
+          <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGreen">$</Text> tmux</Text>
+          <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGree">$</Text></Text>
         </Box>
-      <Flex bg={tmuxStatusLineColor} lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
-        <Box bg={tmuxBigArrowBg} color="black" px="2">0</Box><ArrowRight borderLeftColor={tmuxBigArrowBg} bg="#93a1a1"/>
-        <Box bg="#93a1a1" color={tmuxBlockFg} px="2">moryoka</Box><ArrowRight borderLeftColor="#93a1a1"/>
-        <ArrowRight borderLeftColor={tmuxStatusLineColor} bg={tmuxBigArrowBg}/><Box bg={tmuxBigArrowBg} color="black" px="2">0</Box><ArrowRight borderLeftColor={tmuxBigArrowBg} bg={tmuxActiveTabBg}/>
-        <Box bg={tmuxActiveTabBg} px="3" color="white">zsh</Box><ArrowRight borderLeftColor={tmuxActiveTabBg} />
+      <Flex bg="tmuxStatusBg" lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
+        <Box bg="tmuxBigArrowBg" color="black" px="2">0</Box><ArrowRight borderLeftColor="tmuxBigArrowBg" bg="tmuxBlockPrimaryBg"/>
+        <Box bg="tmuxBlockPrimaryBg" color="tmuxBlockFg" px="2">moryoka</Box><ArrowRight borderLeftColor="tmuxBlockPrimaryBg"/>
+        <ArrowRight borderLeftColor="tmuxStatusBg" bg="tmuxBigArrowBg"/><Box bg="tmuxBigArrowBg" color="black" px="2">0</Box><ArrowRight borderLeftColor="tmuxBigArrowBg" bg="tmuxActiveTabBg"/>
+        <Box bg="tmuxActiveTabBg" px="3" color="white">zsh</Box><ArrowRight borderLeftColor="tmuxActiveTabBg" />
         <Box px="2" fontWeight="normal" color="gray">1</Box><OutlineArrowRight/><Box color="gray" px="2" fontWeight="normal">nvim</Box>
 
         <Spacer/>
         
-        <ArrowLeft borderRightColor="#657b83"/><ArrowLeft borderRightColor="#93a1a1" bg="#657b83"/><Box px="2" bg="#93a1a1" color={tmuxBlockFg}>{yourIp}</Box>
+        <ArrowLeft borderRightColor="tmuxBlockSecondaryBg"/><ArrowLeft borderRightColor="tmuxBlockPrimaryBg" bg="tmuxBlockSecondaryBg"/><Box px="2" bg="tmuxBlockPrimaryBg" color="tmuxBlockFg">{yourIp}</Box>
       </Flex>
     </Flex>
   ) : <Center h={[250, 300, 380]} mt="4" mb="6"><Spinner emptyColor="whiteAlpha.500" color="gray.400" size="xl" thickness="3px"/></Center> 
