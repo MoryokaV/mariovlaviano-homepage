@@ -123,34 +123,6 @@ const Hero = () => {
       </Flex>
     </Flex>
   ) : <Center h={[250, 300, 380]} mt="4" mb="6"><Spinner emptyColor="whiteAlpha.500" color="gray.400" size="xl" thickness="3px"/></Center> 
-  /*
-  return (
-
-    <Box
-      h={[250, 300, 380]}
-      maxH="50%"
-      overflow="hidden"
-      position="relative"
-      mb={6}
-      boxShadow={`0 0 8px 8px ${useColorModeValue('#f0e7db', '#202023')} inset`}
-      //bgImage={`url('/images/desk3-${useColorModeValue('light', 'dark')}.jpg')`}
-      //bgPosition="center"
-      //bgRepeat="no-repeat"
-      //bgSize="cover"
-      borderRadius="28px"
-    >
-      <Image
-        src={useColorModeValue(lightDesk, darkDesk)}
-        style={{zIndex: -1}}
-        placeholder="blur"
-        sizes="(max-width: 768px) 100vw, 768px"
-        priority={true}
-        fill={true}
-        alt="mario's desk hero image"
-      />
-    </Box>
-  )
-  */
 }
 
 export default Hero
