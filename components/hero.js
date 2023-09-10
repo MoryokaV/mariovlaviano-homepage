@@ -59,6 +59,52 @@ const ArrowLeft = chakra(Box, {
   }
 });
 
+const TerminalPrompt = ({children, path}) => (
+  <Text>
+    <Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> {path ? path : "~/Documents/portfolio-website"} <Text as="span" color="termGreen">$ </Text>{children}
+  </Text> 
+)
+
+const GitPull = () => (
+  <>
+    <Text>remote: Enumerating objects: 5, done.</Text>
+    <Text>remote: Counting objects: 100% (5/5), done.</Text>
+    <Text>Unpacking objects: 100% (3/3), 724 bytes | 362.00 KiB/s, done.</Text>
+    <Text>Fast-forward</Text>
+    <Text>&nbsp;pages/index.js | 9 <Text as="span" color="termRed">++</Text><Text as="span" color="termGreen">-----</Text></Text>
+    <Text>&nbsp;1 file changed, 2 deletions(-), 5 insertions(+)</Text>
+    <br></br>
+  </>
+)
+
+const TmuxStatusline = ({ip}) => (
+  <Flex bg="tmuxStatusBg" lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
+    <Box bg="tmuxBigArrowBg" color="black" px="2">0</Box><ArrowRight borderLeftColor="tmuxBigArrowBg" bg="tmuxBlockPrimaryBg"/>
+    <Box bg="tmuxBlockPrimaryBg" color="tmuxBlockFg" px="2">moryoka</Box><ArrowRight borderLeftColor="tmuxBlockPrimaryBg"/>
+    <ArrowRight borderLeftColor="tmuxStatusBg" bg="tmuxBigArrowBg"/><Box bg="tmuxBigArrowBg" color="black" px="2">0</Box><ArrowRight borderLeftColor="tmuxBigArrowBg" bg="tmuxActiveTabBg"/>
+    <Box bg="tmuxActiveTabBg" px="3" color="white">zsh</Box><ArrowRight borderLeftColor="tmuxActiveTabBg" />
+    <Box px="2" fontWeight="normal" color="gray">1</Box><OutlineArrowRight/><Box color="gray" px="2" fontWeight="normal">nvim</Box>
+
+    <Spacer/>
+    
+    <ArrowLeft borderRightColor="tmuxBlockSecondaryBg"/><ArrowLeft borderRightColor="tmuxBlockPrimaryBg" bg="tmuxBlockSecondaryBg"/><Box px="2" bg="tmuxBlockPrimaryBg" color="tmuxBlockFg">{ip}</Box>
+  </Flex>
+)
+
+const TerminalTopbar = ({title}) => (
+  <Flex py="2" px="3" gap="3" justify="space-between" bg="bodyDimmed">
+    <HStack spacing="8px">
+      <Circle size="12px" bg="red.400" borderColor="red.500" borderWidth="1px"></Circle>
+      <Circle size="12px" bg="yellow.400" borderColor="yellow.500" borderWidth="1px"></Circle>
+      <Circle size="12px" bg="green.400" borderColor="green.500" borderWidth="1px"></Circle>
+    </HStack>
+    <Text isTruncated fontWeight="medium" fontSize="sm">
+      {title}
+    </Text>
+    <Box w={{ sm: '50px' }}></Box>
+  </Flex>
+)
+
 const Hero = () => {
   const [yourIp, setYourIp] = useState("")
   const [date, setDate] = useState({})
@@ -97,37 +143,20 @@ const Hero = () => {
       transition={{duration: 3}}
     >
       {/* Topbar */}
-      <Flex py="2" px="3" gap="3" justify="space-between" bg="bodyDimmed">
-        <HStack spacing="8px">
-          <Circle size="12px" bg="red.400" borderColor="red.500" borderWidth="1px"></Circle>
-          <Circle size="12px" bg="yellow.400" borderColor="yellow.500" borderWidth="1px"></Circle>
-          <Circle size="12px" bg="green.400" borderColor="green.500" borderWidth="1px"></Circle>
-        </HStack>
-        <Text isTruncated fontWeight="medium" fontSize="sm">
-          ~/Documents/portfolio-website
-        </Text>
-        <Box w={{ sm: '50px' }}></Box>
-      </Flex>
+      <TerminalTopbar title="~/Documents/portfolio-website"/>
 
       {/* Main content */}
       <Box h="100%" fontFamily="mono" fontSize="xs" p={2}>
-        <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys002`}</Text>
-        <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGreen">$ </Text>tmux</Text>
-        <Text><Text as="span" color="termRed">mario</Text>@<Text as="span" color="termYellow">macbook</Text> ~ <Text as="span" color="termGreen">$ </Text>git pull</Text>
+        <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys00${Math.floor(Math.random() * 5) + 1}`}</Text>
+        <TerminalPrompt path="~">cd Documents/portfolio-website</TerminalPrompt>
+        <TerminalPrompt>tmux</TerminalPrompt>
+        <TerminalPrompt>git pull</TerminalPrompt>
+        <GitPull/>
+        <TerminalPrompt>code .</TerminalPrompt>
+        <TerminalPrompt>npm run dev</TerminalPrompt>
       </Box>
-
-      {/* Tmux statusline */}
-      <Flex bg="tmuxStatusBg" lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
-        <Box bg="tmuxBigArrowBg" color="black" px="2">0</Box><ArrowRight borderLeftColor="tmuxBigArrowBg" bg="tmuxBlockPrimaryBg"/>
-        <Box bg="tmuxBlockPrimaryBg" color="tmuxBlockFg" px="2">moryoka</Box><ArrowRight borderLeftColor="tmuxBlockPrimaryBg"/>
-        <ArrowRight borderLeftColor="tmuxStatusBg" bg="tmuxBigArrowBg"/><Box bg="tmuxBigArrowBg" color="black" px="2">0</Box><ArrowRight borderLeftColor="tmuxBigArrowBg" bg="tmuxActiveTabBg"/>
-        <Box bg="tmuxActiveTabBg" px="3" color="white">zsh</Box><ArrowRight borderLeftColor="tmuxActiveTabBg" />
-        <Box px="2" fontWeight="normal" color="gray">1</Box><OutlineArrowRight/><Box color="gray" px="2" fontWeight="normal">nvim</Box>
-
-        <Spacer/>
-        
-        <ArrowLeft borderRightColor="tmuxBlockSecondaryBg"/><ArrowLeft borderRightColor="tmuxBlockPrimaryBg" bg="tmuxBlockSecondaryBg"/><Box px="2" bg="tmuxBlockPrimaryBg" color="tmuxBlockFg">{yourIp}</Box>
-      </Flex>
+      
+      <TmuxStatusline ip={yourIp}/>
     </Flex>
   ) : <Center h={[250, 300, 380]} mt="4" mb="6"><Spinner emptyColor="whiteAlpha.500" color="gray.400" size="xl" thickness="3px"/></Center> 
 }
