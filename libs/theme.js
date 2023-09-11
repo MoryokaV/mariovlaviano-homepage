@@ -37,9 +37,8 @@ const fonts = {
 
 const colors = {
   grassTeal: '#88ccca',
-  tokyoBlue: '#7da6ff',
   tmuxBlockPrimaryBg: '#93a1a1',
-  tmuxBlockSecondaryBg: '#657b83',
+  tmuxBlockSecondaryBg: '#657b83'
 }
 
 const semanticTokens = {
@@ -49,7 +48,7 @@ const semanticTokens = {
       _dark: '#1a1a1c'
     },
     terminalBorder: {
-      default: 'blackAlpha.300', 
+      default: 'blackAlpha.300',
       _dark: '#393940'
     },
     termRed: {
@@ -69,16 +68,24 @@ const semanticTokens = {
       _dark: '#2a2a2e'
     },
     tmuxActiveTabBg: {
-      default: '#2aa198', 
-      _dark: '#017395'
+      default: '#2aa198',
+      _dark: '#0184ab'
     },
     tmuxBigArrowBg: {
-      default: '#f4f0e9', 
+      default: '#f4f0e9',
       _dark: '#f0e7db'
     },
     tmuxBlockFg: {
-      default: '#f0e7db', 
+      default: '#f0e7db',
       _dark: 'black'
+    },
+    termMagenta: {
+      default: '#d33682',
+      _dark: '#ff63c3'
+    },
+    termBlue: {
+      default: '#268bd2',
+      _dark: '#7AA2F7'
     }
   }
 }
