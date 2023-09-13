@@ -1,7 +1,7 @@
 import { Flex, Box, Spacer } from '@chakra-ui/react'
 import { ArrowRight, ArrowLeft, OutlineArrowRight } from 'components/icons'
 
-export const TmuxStatusline = ({ ip }) => (
+export const TmuxStatusline = ({ ip}) => (
   <Flex bg="tmuxStatusBg" lineHeight="5" fontWeight="bold" fontSize="sm" fontFamily="mono">
     <Box bg="tmuxBigArrowBg" color="black" px="2">
       0
