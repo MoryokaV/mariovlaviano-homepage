@@ -1,7 +1,6 @@
-import { Box, Center, Spinner, Text } from '@chakra-ui/react'
+import { Center, Spinner } from '@chakra-ui/react'
 import Terminal from 'components/terminal'
-import { useEffect, useState, useRef } from 'react'
-import Typed from 'typed.js'
+import { useEffect, useState } from 'react'
 
 function getRandomDate(start, end) {
   const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
@@ -42,7 +41,7 @@ const Hero = () => {
   }, [])
 
   return !loading ? (
-    <Terminal ip={yourIp} date={date}/>
+    <Terminal ip={yourIp} date={date} />
   ) : (
     <Center h={[250, 300, 380]} mt="4" mb="6">
       <Spinner emptyColor="whiteAlpha.500" color="gray.400" size="xl" thickness="3px" />
