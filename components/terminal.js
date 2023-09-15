@@ -220,48 +220,46 @@ const Terminal = ({ ip, date }) => {
 
   return (
     <Parallax>
-
-    <TerminalWindow
-      h={[250, 300, 380]}
-      mt="4"
-      mb="8"
-      borderRadius="lg"
-      borderWidth="1px"
-      borderColor="terminalBorder"
-      overflow="hidden"
-      shadow={terminalWindowShadow}
-      initial={{ scale: 0.5 }}
-      animate={{ scale: 1 }}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-    >
-      <TerminalTopbar title={termWindowTitle} />
-      {/* Main content */}
-      <Box h="100%" overflowY="auto" fontFamily="mono" fontSize="xs" p={2}>
-        <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys00${
-          Math.floor(Math.random() * 5) + 1
-        }`}</Text>
-        <TerminalPrompt path="~" display="block">
-          <span ref={cdEl}></span>
-        </TerminalPrompt>
-        <TerminalPrompt display={cmdIndex >= 1 ? 'block' : 'none'}>
-          <span ref={tmuxEl}></span>
-        </TerminalPrompt>
-        <TerminalPrompt display={cmdIndex >= 2 ? 'block' : 'none'}>
-          <span ref={gitEl}></span>
-        </TerminalPrompt>
-        <GitPull display={cmdIndex >= 3 ? 'block' : 'none'} ref={gitpullEl} />
-        <TerminalPrompt display={cmdIndex >= 4 ? 'block' : 'none'}>
-          <span ref={vscodeEl}></span>
-        </TerminalPrompt>
-        <TerminalPrompt display={cmdIndex >= 5 ? 'block' : 'none'}>
-          <span ref={npmEl}></span>
-        </TerminalPrompt>
-        <Npm display={cmdIndex >= 6 ? 'block' : 'none'} />
-      </Box>
-      {isTmuxActive && <TmuxStatusline ip={ip} />}{' '}
-    </TerminalWindow>
-
+      <TerminalWindow
+        h={[250, 300, 400]}
+        mt="4"
+        mb="8"
+        borderRadius="lg"
+        borderWidth="1px"
+        borderColor="terminalBorder"
+        overflow="hidden"
+        shadow={terminalWindowShadow}
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1 }}
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.3 }}
+      >
+        <TerminalTopbar title={termWindowTitle} />
+        {/* Main content */}
+        <Box h="100%" overflowY="auto" fontFamily="mono" fontSize="xs" p={2}>
+          <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys00${
+            Math.floor(Math.random() * 5) + 1
+          }`}</Text>
+          <TerminalPrompt path="~" display="block">
+            <span ref={cdEl}></span>
+          </TerminalPrompt>
+          <TerminalPrompt display={cmdIndex >= 1 ? 'block' : 'none'}>
+            <span ref={tmuxEl}></span>
+          </TerminalPrompt>
+          <TerminalPrompt display={cmdIndex >= 2 ? 'block' : 'none'}>
+            <span ref={gitEl}></span>
+          </TerminalPrompt>
+          <GitPull display={cmdIndex >= 3 ? 'block' : 'none'} ref={gitpullEl} />
+          <TerminalPrompt display={cmdIndex >= 4 ? 'block' : 'none'}>
+            <span ref={vscodeEl}></span>
+          </TerminalPrompt>
+          <TerminalPrompt display={cmdIndex >= 5 ? 'block' : 'none'}>
+            <span ref={npmEl}></span>
+          </TerminalPrompt>
+          <Npm display={cmdIndex >= 6 ? 'block' : 'none'} />
+        </Box>
+        {isTmuxActive && <TmuxStatusline ip={ip} />}{' '}
+      </TerminalWindow>
     </Parallax>
   )
 }

@@ -1,9 +1,10 @@
-import { Box, Container, Heading, useColorModeValue, Image, Link } from '@chakra-ui/react'
+import { Box, Container, Heading, useColorModeValue, Image, Link, Button } from '@chakra-ui/react'
 import Section from '../components/section'
 import NextLink from 'next/link'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '@/components/layouts/article'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 
 const Page = () => {
   return (
@@ -48,6 +49,11 @@ const Page = () => {
             he likes to spend time outside around cars. Currently, he is living of helping small local businesses scale
             up by improving their marketing and productivity stategies using the latest digital solutions in the market.
           </Paragraph>
+          <Box align="center" my={4}>
+            <Button as={NextLink} rightIcon={<ChevronRightIcon />} colorScheme="teal" scroll={false} href="/projects">
+              My Portfolio
+            </Button>
+          </Box>
         </Section>
 
         <Section delay={0.2}>
@@ -85,7 +91,13 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             I ♥
           </Heading>
-          <Paragraph>Sports cars, Coffee, Art, <Link as={NextLink} href="/">Entrepreneurship</Link>, Biking, Music, Swimming, Public speaking, </Paragraph>
+          <Paragraph>
+            Sports cars, Coffee, Art,{' '}
+            <Link as={NextLink} href="/">
+              Entrepreneurship
+            </Link>
+            , Biking, Music, Swimming, Public speaking,{' '}
+          </Paragraph>
         </Section>
       </Container>
     </Layout>
