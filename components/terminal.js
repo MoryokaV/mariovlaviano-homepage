@@ -1,7 +1,7 @@
 import { Flex, HStack, Circle, Box, Text, chakra, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
 import { motion, isValidMotionProp } from 'framer-motion'
 import { TmuxStatusline } from './tmux'
-import { useRef, useEffect, useState, forwardRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Typed from 'typed.js'
 import { Parallax } from './parallax'
 
@@ -49,31 +49,29 @@ const TerminalPrompt = ({ children, path, display }) => (
   </Text>
 )
 
-const GitPull = forwardRef((props, ref) => {
-  return (
-    <Box display={props.display} ref={ref}>
-      <Text>remote: Enumerating objects: 5, done.</Text>
-      <Text>remote: Counting objects: 100% (5/5), done.</Text>
-      <Text>Unpacking objects: 100% (3/3), 724 bytes | 362.00 KiB/s, done.</Text>
-      <Text>Fast-forward</Text>
-      <Text>
-        &nbsp;pages/index.js | 9{' '}
-        <Text as="span" color="termRed">
-          ++
-        </Text>
-        <Text as="span" color="termGreen">
-          -----
-        </Text>
+const GitPull = () => (
+  <Box>
+    <Text>remote: Enumerating objects: 5, done.</Text>
+    <Text>remote: Counting objects: 100% (5/5), done.</Text>
+    <Text>Unpacking objects: 100% (3/3), 724 bytes | 362.00 KiB/s, done.</Text>
+    <Text>Fast-forward</Text>
+    <Text>
+      &nbsp;pages/index.js | 9{' '}
+      <Text as="span" color="termRed">
+        ++
       </Text>
-      <Text>&nbsp;1 file changed, 2 deletions(-), 5 insertions(+)</Text>
+      <Text as="span" color="termGreen">
+        -----
+      </Text>
+    </Text>
+    <Text>&nbsp;1 file changed, 2 deletions(-), 5 insertions(+)</Text>
 
-      <Box h="2"></Box>
-    </Box>
-  )
-})
+    <Box h="2"></Box>
+  </Box>
+)
 
-const Npm = ({ display }) => (
-  <Box display={display}>
+const Npm = () => (
+  <Box>
     <Box h="2"></Box>
 
     <Text>{'> portfolio-website@0.1.0 dev'}</Text>
@@ -119,7 +117,6 @@ const Terminal = ({ ip, date }) => {
   const tmuxEl = useRef(null)
   const gitEl = useRef(null)
   const vscodeEl = useRef(null)
-  const gitpullEl = useRef(null)
   const npmEl = useRef(null)
 
   useEffect(() => {
@@ -234,6 +231,7 @@ const Terminal = ({ ip, date }) => {
         transition={{ duration: 0.3 }}
       >
         <TerminalTopbar title={termWindowTitle} />
+
         {/* Main content */}
         <Box h="100%" overflowY="auto" fontFamily="mono" fontSize="xs" p={2}>
           <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys00${
@@ -248,15 +246,16 @@ const Terminal = ({ ip, date }) => {
           <TerminalPrompt display={cmdIndex >= 2 ? 'block' : 'none'}>
             <span ref={gitEl}></span>
           </TerminalPrompt>
-          <GitPull display={cmdIndex >= 3 ? 'block' : 'none'} ref={gitpullEl} />
+          {cmdIndex >= 3 && <GitPull />}
           <TerminalPrompt display={cmdIndex >= 4 ? 'block' : 'none'}>
             <span ref={vscodeEl}></span>
           </TerminalPrompt>
           <TerminalPrompt display={cmdIndex >= 5 ? 'block' : 'none'}>
             <span ref={npmEl}></span>
           </TerminalPrompt>
-          <Npm display={cmdIndex >= 6 ? 'block' : 'none'} />
+          {cmdIndex >= 6 && <Npm />}
         </Box>
+
         {isTmuxActive && <TmuxStatusline iteration={iteration} ip={ip} />}
       </TerminalWindow>
     </Parallax>
