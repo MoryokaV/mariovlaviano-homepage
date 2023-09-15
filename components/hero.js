@@ -43,7 +43,7 @@ const Hero = () => {
   return !loading ? (
     <Terminal ip={yourIp} date={date} />
   ) : (
-    <Center h={[250, 320, 410]} mt="4" mb="6">
+    <Center h={[250, 320, 390]} mt={2} mb={8}>
       <Spinner emptyColor="whiteAlpha.500" color="gray.400" size="xl" thickness="3px" />
     </Center>
   )

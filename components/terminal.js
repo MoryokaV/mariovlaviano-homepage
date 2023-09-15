@@ -1,4 +1,4 @@
-import { Flex, HStack, Circle, Box, Text, chakra, shouldForwardProp, useColorModeValue } from '@chakra-ui/react'
+import { Flex, HStack, Circle, Box, Text, chakra, shouldForwardProp, useColorModeValue, Image } from '@chakra-ui/react'
 import { motion, isValidMotionProp } from 'framer-motion'
 import { TmuxStatusline } from './tmux'
 import { useRef, useEffect, useState } from 'react'
@@ -218,9 +218,9 @@ const Terminal = ({ ip, date }) => {
   return (
     <Parallax>
       <TerminalWindow
-        h={[250, 320, 410]}
-        mt="4"
-        mb="8"
+        h={[250, 320, 390]}
+        mt={2}
+        mb={8}
         borderRadius="lg"
         borderWidth="1px"
         borderColor="terminalBorder"

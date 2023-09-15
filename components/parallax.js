@@ -10,31 +10,31 @@ export const Parallax = ({ children }) => {
     const mouseX = e.clientX - rect.left
     const mouseY = e.clientY - rect.top
 
-    console.log(rect)
-    console.log('x: ' + mouseX, 'y: ' + mouseY)
-
     const ph = (mouseY / rect.height) * 100
-    console.log('ph%: ' + ph)
 
     const rotateX = -16 + (ph / 100) * 32
-    console.log(rotateX)
 
     const pw = (mouseX / rect.width) * 100
-    console.log('pw%: ' + pw)
 
     const rotateY = -16 + (pw / 100) * 32
-    console.log(rotateY)
 
     termRef.current.style = `transform: rotateY(${rotateY}deg) rotateX(${-rotateX}deg)`
   }
 
   const mouseLeaveHandler = () => {
-    termRef.current.style = 'transform: none'
+    termRef.current.style = 'transition: all 0.4s linear 0s; transform: rotateY(0deg) rotateX(0deg)'
   }
 
   return (
-    <Box ref={termRef} onMouseMove={mouseMoveHandler} onMouseLeave={mouseLeaveHandler}>
-      {children}
+    <Box css={{ overflow: 'visible', perspective: '160rem' }}>
+      <Box
+        ref={termRef}
+        onMouseMove={mouseMoveHandler}
+        onMouseLeave={mouseLeaveHandler}
+        css={{ transformStyle: 'preserve-3d' }}
+      >
+        {children}
+      </Box>
     </Box>
   )
 }
