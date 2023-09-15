@@ -2,8 +2,8 @@ import { Center, Spinner } from '@chakra-ui/react'
 import Terminal from 'components/terminal'
 import { useEffect, useState } from 'react'
 
-function getRandomDate(start, end) {
-  const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+function getCurrentDate() {
+  const date = new Date()
 
   const weekdayLong = date.toLocaleDateString('en-EN', { weekday: 'short' })
   const weekdayShort = date.toLocaleDateString('en-EN', { day: '2-digit' })
@@ -36,14 +36,14 @@ const Hero = () => {
   }
 
   useEffect(() => {
-    setDate(getRandomDate(new Date(2012, 0, 1), new Date()))
+    setDate(getCurrentDate())
     fetchClientIp()
   }, [])
 
   return !loading ? (
     <Terminal ip={yourIp} date={date} />
   ) : (
-    <Center h={[250, 300, 380]} mt="4" mb="6">
+    <Center h={[250, 320, 410]} mt="4" mb="6">
       <Spinner emptyColor="whiteAlpha.500" color="gray.400" size="xl" thickness="3px" />
     </Center>
   )

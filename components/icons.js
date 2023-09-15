@@ -19,7 +19,8 @@ export const OutlineArrowRight = chakra(Box, {
     height: '11px',
     borderTop: '1px solid gray',
     borderRight: '1px solid gray',
-    transform: 'rotate(45deg) translateY(60%)'
+    transform: 'rotate(45deg) translateY(60%)',
+    display: { base: 'none', sm: 'block' }
   }
 })
 

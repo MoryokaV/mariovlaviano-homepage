@@ -221,7 +221,7 @@ const Terminal = ({ ip, date }) => {
   return (
     <Parallax>
       <TerminalWindow
-        h={[250, 300, 400]}
+        h={[250, 320, 410]}
         mt="4"
         mb="8"
         borderRadius="lg"
@@ -231,7 +231,6 @@ const Terminal = ({ ip, date }) => {
         shadow={terminalWindowShadow}
         initial={{ scale: 0.5 }}
         animate={{ scale: 1 }}
-        whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
       >
         <TerminalTopbar title={termWindowTitle} />
@@ -258,7 +257,7 @@ const Terminal = ({ ip, date }) => {
           </TerminalPrompt>
           <Npm display={cmdIndex >= 6 ? 'block' : 'none'} />
         </Box>
-        {isTmuxActive && <TmuxStatusline ip={ip} />}{' '}
+        {isTmuxActive && <TmuxStatusline iteration={iteration} ip={ip} />}
       </TerminalWindow>
     </Parallax>
   )
