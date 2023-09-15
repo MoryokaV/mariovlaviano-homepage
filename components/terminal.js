@@ -3,11 +3,12 @@ import { motion, isValidMotionProp } from 'framer-motion'
 import { TmuxStatusline } from './tmux'
 import { useRef, useEffect, useState, forwardRef } from 'react'
 import Typed from 'typed.js'
+import { Parallax } from './parallax'
 
-const typeSpeedFast = 100
-const typeSpeedSlow = 150
-const startDelayFast = 1000
-const startDelaySlow = 1500
+const typeSpeedFast = 110
+const typeSpeedSlow = 160
+const startDelayFast = 1200
+const startDelaySlow = 1700
 
 const TerminalWindow = chakra(motion.div, {
   shouldForwardProp: prop => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -49,26 +50,8 @@ const TerminalPrompt = ({ children, path, display }) => (
 )
 
 const GitPull = forwardRef((props, ref) => {
-  /*const gitpullEL = useRef(null)
-
-  useEffect(() => {
-    const gitpull = new Typed(gitpullEL, {
-      strings: "",
-      typeSpeed: 40,
-      startDelay: 40,
-      onComplete: self => {
-        self.destroy()
-        
-        gitEl.current.textContent = terminalData[2].cmd
-        terminalData[2].result();
-      }
-    })
-  }, [])*/
-
   return (
-    <Box display={props.display} ref={ref} whiteSpace="pre-line">
-      {/*
-       */}
+    <Box display={props.display} ref={ref}>
       <Text>remote: Enumerating objects: 5, done.</Text>
       <Text>remote: Counting objects: 100% (5/5), done.</Text>
       <Text>Unpacking objects: 100% (3/3), 724 bytes | 362.00 KiB/s, done.</Text>
@@ -138,7 +121,6 @@ const Terminal = ({ ip, date }) => {
   const vscodeEl = useRef(null)
   const gitpullEl = useRef(null)
   const npmEl = useRef(null)
-  const npmDevEl = useRef(null)
 
   useEffect(() => {
     const npm = new Typed(npmEl.current, {
@@ -237,6 +219,8 @@ const Terminal = ({ ip, date }) => {
   }, [iteration])
 
   return (
+    <Parallax>
+
     <TerminalWindow
       h={[250, 300, 380]}
       mt="4"
@@ -277,6 +261,8 @@ const Terminal = ({ ip, date }) => {
       </Box>
       {isTmuxActive && <TmuxStatusline ip={ip} />}{' '}
     </TerminalWindow>
+
+    </Parallax>
   )
 }
 
