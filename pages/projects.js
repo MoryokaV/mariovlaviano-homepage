@@ -56,13 +56,13 @@ const Projects = () => {
             </ProjectGridItem>
           </Section>
           <Section delay={0.3}>
-            <ProjectGridItem id="velocity" title="Velocity Robotics" thumbnail={thumbVelocity}>
-              High school robotics team presentation as a web page
+            <ProjectGridItem id="ericautomaster" title="Eric Automaster" thumbnail={thumbEricAutomaster}>
+              Elite driving school based in Brăila landing page
             </ProjectGridItem>
           </Section>
           <Section delay={0.4}>
-            <ProjectGridItem id="ericautomaster" title="Eric Automaster" thumbnail={thumbEricAutomaster}>
-              Elite driving school based in Brăila landing page
+            <ProjectGridItem id="velocity" title="Velocity Robotics" thumbnail={thumbVelocity}>
+              High school robotics team presentation as a web page
             </ProjectGridItem>
           </Section>
         </SimpleGrid>

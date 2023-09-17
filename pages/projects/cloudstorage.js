@@ -10,10 +10,10 @@ import thumbnail2 from 'public/images/projects/cloudstorage_03.png'
 
 const Work = () => {
   return (
-    <Layout title="Visit Brăila">
+    <Layout title="Cloud Storage">
       <Container>
         <WorkTitle>
-          City Break <Badge>2023</Badge>
+          Cloud Storage <Badge>2020-2021</Badge>
         </WorkTitle>
 
         <Paragraph>
@@ -22,6 +22,7 @@ const Work = () => {
           concept in C#. I'm not identifing as a desktop app developer yet :) and I'm not planning this in the near
           future, but, as always, the experience was welcomed.
         </Paragraph>
+
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Source</Meta>

@@ -25,6 +25,7 @@ const Work = () => {
           newsletter. With the contribution of the local authorities we did a good job marketing Brăila as a city break
           destination.
         </Paragraph>
+
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Source</Meta>

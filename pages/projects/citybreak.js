@@ -14,7 +14,7 @@ const Work = () => {
     <Layout title="Visit Brăila">
       <Container>
         <WorkTitle>
-          City Break <Badge>2023</Badge>
+          City Break <Badge>2023-</Badge>
         </WorkTitle>
 
         <Paragraph>
@@ -26,6 +26,7 @@ const Work = () => {
           </Link>
           , a scaled product which will be transformed in a startup business.
         </Paragraph>
+
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Source</Meta>
