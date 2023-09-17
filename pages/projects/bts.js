@@ -17,7 +17,11 @@ const Work = () => {
           Brăila Tech Sprint Website <Badge>2023</Badge>
         </WorkTitle>
 
-        <Paragraph></Paragraph>
+        <Paragraph>
+          BTS is the first hackathon in the south-eastern region of Romania. 
+          As part of the staff, I was asked to build the official website of the event to display information in a formated and stylish way.
+          I approched a minimal design to express the simplicity of the competition, being opened to students of all ages.
+        </Paragraph>
 
         <List ml={4} my={4}>
           <ListItem>
