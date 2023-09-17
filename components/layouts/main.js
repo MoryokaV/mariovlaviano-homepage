@@ -2,6 +2,7 @@ import { Box, Container } from '@chakra-ui/react'
 import Head from 'next/head'
 import Hero from '../hero'
 import Navbar from '../navbar'
+import Footer from '../footer'
 
 const Main = ({ children, router }) => {
   return (
@@ -16,6 +17,8 @@ const Main = ({ children, router }) => {
         <Hero />
         {children}
       </Container>
+
+      <Footer />
     </Box>
   )
 }

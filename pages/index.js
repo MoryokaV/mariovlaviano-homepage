@@ -1,10 +1,11 @@
-import { Box, Container, Heading, useColorModeValue, Image, Link, Button } from '@chakra-ui/react'
+import { Box, Container, Heading, useColorModeValue, Image, Link, Button, List, ListItem, Icon } from '@chakra-ui/react'
 import Section from '../components/section'
 import NextLink from 'next/link'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '@/components/layouts/article'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import { IoMail, IoLogoFacebook, IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 
 const Page = () => {
   return (
@@ -98,6 +99,56 @@ const Page = () => {
             </Link>
             , Biking, Music, Swimming, Public speaking,{' '}
           </Paragraph>
+        </Section>
+
+        <Section delay={0.4}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link as={NextLink} href="https://github.com/moryokav" target="_blank">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>
+                  @moryokav
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link as={NextLink} href="https://instagram.com/mario.vlv" target="_blank">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoInstagram} />}>
+                  @mario.vlv
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link as={NextLink} href="https://facebook.com/mariovlaviano.75" target="_blank">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoFacebook} />}>
+                  Mario Alexandru Vlaviano
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link as={NextLink} href="https://www.linkedin.com/in/mario-alexandru-vlaviano-6b3798289" target="_blank">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoLinkedin} />}>
+                  Mario Vlaviano
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+        </Section>
+
+        <Section delay={0.5}>
+          <Heading as="h3" variant="section-title">
+            Reach out
+          </Heading>
+          <Paragraph>I am open to freelance work and new opportunities in software development.</Paragraph>
+          <Box align="center" mt={3}>
+            <Link as={NextLink} href="mailto:mariovlaviano2005@yahoo.com">
+              <Button colorScheme="teal" leftIcon={<Icon as={IoMail} />}>
+                Send me an email
+              </Button>
+            </Link>
+          </Box>
         </Section>
       </Container>
     </Layout>
