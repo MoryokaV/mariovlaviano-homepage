@@ -61,6 +61,11 @@ const Projects = () => {
             </ProjectGridItem>
           </Section>
           <Section delay={0.4}>
+            <ProjectGridItem id="barberef" title="Freestyle Barber EF" thumbnail={thumbVelocity}>
+              Local man&women barber shop landing page
+            </ProjectGridItem>
+          </Section>
+          <Section delay={0.4}>
             <ProjectGridItem id="velocity" title="Velocity Robotics" thumbnail={thumbVelocity}>
               High school robotics team presentation as a web page
             </ProjectGridItem>
