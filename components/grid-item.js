@@ -6,7 +6,13 @@ import { Global } from '@emotion/react'
 export const GridItem = ({ children, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
     <LinkBox cursor="pointer">
-      <Image src={thumbnail} alt={title} className="grid-item-thumbnail" placeholder="blur" loading="lazy" />
+      <Image
+        src={thumbnail}
+        alt={title}
+        className="grid-item-thumbnail"
+        placeholder="blur"
+        loading="lazy"
+      />
       <LinkOverlay href={href} target="_blank">
         <Text mt={2}>{title}</Text>
       </LinkOverlay>
@@ -17,8 +23,22 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
 
 export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
-    <LinkBox scroll={true} cursor="pointer" as={NextLink} href={`/projects/${id}`}>
-      <Image src={thumbnail} alt={title} className="grid-item-thumbnail" placeholder="blur" />
+    <LinkBox
+      scroll={true}
+      cursor="pointer"
+      as={NextLink}
+      href={`/projects/${id}`}
+    >
+      <Image
+        src={thumbnail}
+        alt={title}
+        className="grid-item-thumbnail"
+        placeholder="blur"
+        style={{
+          objectFit: 'cover',
+          height: '160px'
+        }}
+      />
       <LinkOverlay as="div" href={`/projects/${id}`}>
         <Text mt={2} fontSize={20}>
           {title}

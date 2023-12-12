@@ -1,16 +1,12 @@
-import { Container, Badge, List, ListItem, Text } from '@chakra-ui/react'
+import { Container, Badge, List, ListItem, Text, Link } from '@chakra-ui/react'
 import { WorkTitle, Meta, WorkImage } from '../../components/work'
 import Paragraph from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
+import NextLink from 'next/link'
 
-{
-  /*
-import thumbnail1 from 'public/images/projects/bts_02.jpg'
-import thumbnail2 from 'public/images/projects/bts_03.png'
-import thumbnail3 from 'public/images/projects/bts_04.png'
-*/
-}
+import thumbnail1 from 'public/images/projects/barberef_02.png'
+import thumbnail2 from 'public/images/projects/barberef_03.png'
 
 const Work = () => {
   return (
@@ -21,18 +17,23 @@ const Work = () => {
         </WorkTitle>
 
         <Paragraph>
-          This is a website created after the opening in september 2023 of a new professional barber shop. The design of
-          the page is very neat and modern to express the style of the business. With this new information channel
-          opened more clients can reach out to this barber shop.
+          This is a website created after the opening in september 2023 of a new
+          professional barber shop. The design of the page is very neat and
+          modern to express the style of the business. With this new information
+          channel opened more clients can reach out to this barber shop.
         </Paragraph>
 
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Website</Meta>
-            <Text color="gray" display="inline">
-              link comming soon
+            <Link
+              as={NextLink}
+              target="_blank"
+              href="https://freestylebarber-ef.ro"
+            >
+              https://freestylebarber-ef.ro
               <ExternalLinkIcon mx={2} />
-            </Text>
+            </Link>
           </ListItem>
           <ListItem>
             <Meta>Stack</Meta>
@@ -40,11 +41,8 @@ const Work = () => {
           </ListItem>
         </List>
 
-        {/*
-        <WorkImage src={thumbnail1} alt="Braila Tech Sprint" />
-        <WorkImage src={thumbnail2} alt="Braila Tech Sprint" />
-        <WorkImage src={thumbnail3} alt="Braila Tech Sprint" />
-        */}
+        <WorkImage src={thumbnail1} alt="Freestyle Barber EF website" />
+        <WorkImage src={thumbnail2} alt="Freestyle Barber EF website" />
       </Container>
     </Layout>
   )
