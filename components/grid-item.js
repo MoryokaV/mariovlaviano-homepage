@@ -3,7 +3,7 @@ import Image from 'next/image'
 import NextLink from 'next/link'
 import { Global } from '@emotion/react'
 
-export const GridItem = ({ children, href, title, thumbnail }) => (
+export const PostGridItem = ({ children, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
     <LinkBox cursor="pointer">
       <Image
@@ -12,8 +12,12 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
         className="grid-item-thumbnail"
         placeholder="blur"
         loading="lazy"
+        style={{
+          objectFit: 'cover',
+          height: '190px'
+        }}
       />
-      <LinkOverlay href={href} target="_blank">
+      <LinkOverlay href={href}>
         <Text mt={2}>{title}</Text>
       </LinkOverlay>
       <Text fontSize={14}>{children}</Text>
