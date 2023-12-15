@@ -86,6 +86,10 @@ const semanticTokens = {
     termBlue: {
       default: '#268bd2',
       _dark: '#7AA2F7'
+    },
+    postBg: {
+      default: '#fff',
+      _dark: '#27272b'
     }
   }
 }
@@ -95,6 +99,13 @@ const config = {
   useSystemColorMode: true
 }
 
-const theme = extendTheme({ config, styles, components, fonts, colors, semanticTokens })
+const theme = extendTheme({
+  config,
+  styles,
+  components,
+  fonts,
+  colors,
+  semanticTokens
+})
 
 export default theme

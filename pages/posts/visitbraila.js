@@ -1,19 +1,16 @@
+import { Box, Container, VStack, Text, SimpleGrid } from '@chakra-ui/react'
 import {
-  Box,
-  Container,
-  HStack,
-  Image,
-  VStack,
-  Text,
-  SimpleGrid,
-  Stack,
-  Center
-} from '@chakra-ui/react'
-import { PostImage, PostTitle } from '@/components/post'
+  LikeButton,
+  PostButton,
+  PostHeader,
+  PostImage,
+  PostTitle,
+  ShareButton
+} from '@/components/post'
 import Layout from '../../components/layouts/article'
 import Paragraph from '@/components/paragraph'
-import { TimeIcon } from '@chakra-ui/icons'
 import Fancybox from '@/libs/fancybox'
+import { AiOutlineLike, AiOutlineShareAlt } from 'react-icons/ai'
 
 import alma1 from 'public/images/posts/visitbraila/visitbraila1.jpg'
 import alma2 from 'public/images/posts/visitbraila/visitbraila3.jpg'
@@ -28,29 +25,15 @@ const Post = () => {
     <Layout title="Visit Brăila">
       <Container>
         <PostTitle />
-        <Box borderRadius="md" backgroundColor="#27272b" mb={4}>
+        <Box
+          borderRadius="md"
+          backgroundColor="postBg"
+          borderColor="terminalBorder"
+          borderWidth="1px"
+          mb={4}
+        >
           <Box p={4}>
-            <HStack gap={4} mb={4}>
-              <Image
-                borderColor="whiteAlpha.800"
-                borderWidth={2}
-                borderStyle="solid"
-                maxWidth="60px"
-                display="inline-block"
-                borderRadius="full"
-                src="/images/mario.jpg"
-                alt="Profile picture"
-              />
-              <VStack align="start" gap={0}>
-                <Text fontWeight="700" fontSize="lg">
-                  Mario Vlaviano
-                </Text>
-                <HStack opacity="50%" fontSize="md">
-                  <Text>28 noiembrie, 2023</Text>
-                  <TimeIcon />
-                </HStack>
-              </VStack>
-            </HStack>
+            <PostHeader date="28 noiembrie, 2023"></PostHeader>
             <Paragraph>
               Lorem ipsum dolor sit amet, officia excepteur ex fugiat
               reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
@@ -85,10 +68,11 @@ const Post = () => {
                     fontWeight="bold"
                     zIndex={2}
                     pointerEvents="none"
+                    color="white"
                   >
                     +3
                   </Text>
-                  <PostImage src={qr} alt="Visit Braila" opacity="40%" />
+                  <PostImage src={qr} alt="Visit Braila" brightness="40%" />
                 </Box>
               </SimpleGrid>
             </VStack>
@@ -99,6 +83,10 @@ const Post = () => {
               display="none"
             ></PostImage>
           </Fancybox>
+          <SimpleGrid columns={[2]} p={2}>
+            <LikeButton></LikeButton>
+            <ShareButton></ShareButton>
+          </SimpleGrid>
         </Box>
       </Container>
     </Layout>
