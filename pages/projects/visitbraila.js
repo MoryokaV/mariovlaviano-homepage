@@ -83,7 +83,7 @@ const Work = () => {
           </ListItem>
         </List>
 
-        <SimpleGrid columns={{ sm: 2 }} gap="2">
+        <SimpleGrid columns={{ sm: 2 }} gap={{ sm: 2 }}>
           <WorkImage src={thumbnail3} alt="Visit Braila app screenshots" />
           <WorkImage src={thumbnail4} alt="Visit Braila app screenshots" />
         </SimpleGrid>

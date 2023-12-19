@@ -1,7 +1,6 @@
 import { Box, Container, VStack, Text, SimpleGrid } from '@chakra-ui/react'
 import {
   LikeButton,
-  PostButton,
   PostHeader,
   PostImage,
   PostTitle,
@@ -10,7 +9,6 @@ import {
 import Layout from '../../components/layouts/article'
 import Paragraph from '@/components/paragraph'
 import Fancybox from '@/libs/fancybox'
-import { AiOutlineLike, AiOutlineShareAlt } from 'react-icons/ai'
 
 import alma1 from 'public/images/posts/visitbraila/visitbraila1.jpg'
 import alma2 from 'public/images/posts/visitbraila/visitbraila3.jpg'
@@ -23,14 +21,14 @@ import ziar from 'public/images/posts/visitbraila/visitbraila7.jpg'
 const Post = () => {
   return (
     <Layout title="Visit Brăila">
-      <Container>
+      <Container px="0">
         <PostTitle />
         <Box
           borderRadius="md"
           backgroundColor="postBg"
           borderColor="terminalBorder"
           borderWidth="1px"
-          mb={4}
+          mb={6}
         >
           <Box p={4}>
             <PostHeader date="28 noiembrie, 2023"></PostHeader>
@@ -83,6 +81,37 @@ const Post = () => {
               display="none"
             ></PostImage>
           </Fancybox>
+          <SimpleGrid columns={[2]} p={2}>
+            <LikeButton></LikeButton>
+            <ShareButton></ShareButton>
+          </SimpleGrid>
+        </Box>
+
+        <Box
+          borderRadius="md"
+          backgroundColor="postBg"
+          borderColor="terminalBorder"
+          borderWidth="1px"
+          mb={4}
+        >
+          <Box p={4}>
+            <PostHeader date="28 noiembrie, 2023"></PostHeader>
+            <Paragraph>
+              Lorem ipsum dolor sit amet, officia excepteur ex fugiat
+              reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
+              ex esse exercitation amet. Nisi anim cupidatat excepteur officia.
+              Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet
+            </Paragraph>
+          </Box>
+          <iframe
+            width="100%"
+            height="320"
+            src="https://www.youtube.com/embed/XpVzETwet1c?si=lc3pOHmMTce1JIJG"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            allowfullscreen
+          ></iframe>
           <SimpleGrid columns={[2]} p={2}>
             <LikeButton></LikeButton>
             <ShareButton></ShareButton>

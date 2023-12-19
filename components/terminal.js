@@ -1,4 +1,14 @@
-import { Flex, HStack, Circle, Box, Text, chakra, shouldForwardProp, useColorModeValue, Image } from '@chakra-ui/react'
+import {
+  Flex,
+  HStack,
+  Circle,
+  Box,
+  Text,
+  chakra,
+  shouldForwardProp,
+  useColorModeValue,
+  Image
+} from '@chakra-ui/react'
 import { motion, isValidMotionProp } from 'framer-motion'
 import { TmuxStatusline } from './tmux'
 import { useRef, useEffect, useState } from 'react'
@@ -7,8 +17,13 @@ import { Parallax } from './parallax'
 
 const typeSpeedFast = 110
 const typeSpeedSlow = 160
+/*
 const startDelayFast = 1200
 const startDelaySlow = 1700
+*/
+
+const startDelayFast = 200
+const startDelaySlow = 700
 
 const TerminalWindow = chakra(motion.div, {
   shouldForwardProp: prop => isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -21,9 +36,24 @@ const TerminalWindow = chakra(motion.div, {
 const TerminalTopbar = ({ title }) => (
   <Flex py="2" px="3" gap="3" justify="space-between" bg="bodyDimmed">
     <HStack spacing="8px">
-      <Circle size="12px" bg="red.400" borderColor="red.500" borderWidth="1px"></Circle>
-      <Circle size="12px" bg="yellow.400" borderColor="yellow.500" borderWidth="1px"></Circle>
-      <Circle size="12px" bg="green.400" borderColor="green.500" borderWidth="1px"></Circle>
+      <Circle
+        size="12px"
+        bg="red.400"
+        borderColor="red.500"
+        borderWidth="1px"
+      ></Circle>
+      <Circle
+        size="12px"
+        bg="yellow.400"
+        borderColor="yellow.500"
+        borderWidth="1px"
+      ></Circle>
+      <Circle
+        size="12px"
+        bg="green.400"
+        borderColor="green.500"
+        borderWidth="1px"
+      ></Circle>
     </HStack>
     <Text isTruncated fontWeight="medium" fontSize="sm">
       {title}
@@ -113,11 +143,17 @@ const Terminal = ({ ip, date }) => {
 
   const terminalWindowShadow = useColorModeValue('xl', 'dark-lg')
 
+  const boxEl = useRef(null)
+
   const cdEl = useRef(null)
   const tmuxEl = useRef(null)
   const gitEl = useRef(null)
   const vscodeEl = useRef(null)
   const npmEl = useRef(null)
+
+  useEffect(() => {
+    boxEl.current.scrollTop = boxEl.current.scrollHeight
+  }, [cmdIndex])
 
   useEffect(() => {
     const npm = new Typed(npmEl.current, {
@@ -130,6 +166,7 @@ const Terminal = ({ ip, date }) => {
         npmEl.current.textContent = 'npm run dev'
 
         setCmdIndex(6)
+
         setTimeout(() => {
           setCmdIndex(0)
           setIsTmuxActive(false)
@@ -163,6 +200,7 @@ const Terminal = ({ ip, date }) => {
         self.destroy()
 
         gitEl.current.textContent = 'git pull'
+
         setCmdIndex(4)
 
         setTimeout(() => vscode.start(), startDelaySlow)
@@ -233,10 +271,17 @@ const Terminal = ({ ip, date }) => {
         <TerminalTopbar title={termWindowTitle} />
 
         {/* Main content */}
-        <Box h="100%" overflowY="auto" fontFamily="mono" fontSize="xs" p={2}>
-          <Text>{`Last login: ${date.weekdayLong} ${date.month} ${date.weekdayShort} ${date.time} on ttys00${
-            Math.floor(Math.random() * 5) + 1
-          }`}</Text>
+        <Box
+          h="100%"
+          overflowY="auto"
+          fontFamily="mono"
+          fontSize="xs"
+          p={2}
+          ref={boxEl}
+        >
+          <Text>{`Last login: ${date.weekdayLong} ${date.month} ${
+            date.weekdayShort
+          } ${date.time} on ttys00${Math.floor(Math.random() * 5) + 1}`}</Text>
           <TerminalPrompt path="~" display="block">
             <span ref={cdEl}></span>
           </TerminalPrompt>
