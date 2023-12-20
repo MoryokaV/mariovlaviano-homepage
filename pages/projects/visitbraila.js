@@ -20,7 +20,7 @@ import thumbnail4 from 'public/images/projects/visitbraila_05.png'
 const Work = () => {
   return (
     <Layout title="Visit Brăila">
-      <Container>
+      <Container px="0">
         <WorkTitle>
           Visit Brăila <Badge>2022-2023</Badge>
         </WorkTitle>
@@ -39,7 +39,7 @@ const Work = () => {
           destination.
         </Paragraph>
 
-        <List ml={4} my={4}>
+        <List ml={{ base: 0, sm: 4 }} my={4}>
           <ListItem>
             <Meta>Download</Meta>
             <Link

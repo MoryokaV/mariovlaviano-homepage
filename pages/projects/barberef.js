@@ -1,4 +1,4 @@
-import { Container, Badge, List, ListItem, Text, Link } from '@chakra-ui/react'
+import { Container, Badge, List, ListItem, Link } from '@chakra-ui/react'
 import { WorkTitle, Meta, WorkImage } from '../../components/work'
 import Paragraph from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
@@ -11,7 +11,7 @@ import thumbnail2 from 'public/images/projects/barberef_03.png'
 const Work = () => {
   return (
     <Layout title="Freestyle Barber EF">
-      <Container>
+      <Container px="0">
         <WorkTitle>
           Freestyle Barber EF <Badge>2023</Badge>
         </WorkTitle>
@@ -23,7 +23,7 @@ const Work = () => {
           channel opened more clients can reach out to this barber shop.
         </Paragraph>
 
-        <List ml={4} my={4}>
+        <List ml={{ base: 0, sm: 4 }} my={4}>
           <ListItem>
             <Meta>Website</Meta>
             <Link

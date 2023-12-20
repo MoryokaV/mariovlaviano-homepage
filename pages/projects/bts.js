@@ -12,21 +12,27 @@ import thumbnail3 from 'public/images/projects/bts_04.png'
 const Work = () => {
   return (
     <Layout title="BTS">
-      <Container>
+      <Container px="0">
         <WorkTitle>
           Brăila Tech Sprint Website <Badge>2023</Badge>
         </WorkTitle>
 
         <Paragraph>
-          BTS is the first hackathon in the south-eastern region of Romania. 
-          As part of the staff, I was asked to build the official website of the event to display information in a formated and stylish way.
-          I approched a minimal design to express the simplicity of the competition, being opened to students of all ages.
+          BTS is the first hackathon in the south-eastern region of Romania. As
+          part of the staff, I was asked to build the official website of the
+          event to display information in a formated and stylish way. I
+          approched a minimal design to express the simplicity of the
+          competition, being opened to students of all ages.
         </Paragraph>
 
-        <List ml={4} my={4}>
+        <List ml={{ base: 0, sm: 4 }} my={4}>
           <ListItem>
             <Meta>Website</Meta>
-            <Link as={NextLink} target="_blank" href="https://hackathon.bjbraila.ro">
+            <Link
+              as={NextLink}
+              target="_blank"
+              href="https://hackathon.bjbraila.ro"
+            >
               https://hackathon.bjbraila.ro
               <ExternalLinkIcon mx={2} />
             </Link>

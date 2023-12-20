@@ -1,4 +1,4 @@
-import { Container, Badge, List, ListItem, Link, Text } from '@chakra-ui/react'
+import { Container, Badge, List, ListItem, Text } from '@chakra-ui/react'
 import { WorkTitle, Meta, WorkImage } from '../../components/work'
 import Paragraph from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
@@ -10,17 +10,18 @@ import thumbnail2 from 'public/images/projects/ericautomaster_03.png'
 const Work = () => {
   return (
     <Layout title="Ericautomaster">
-      <Container>
+      <Container px="0">
         <WorkTitle>
           Eric Automaster landing page <Badge>2023</Badge>
         </WorkTitle>
 
         <Paragraph>
-          Eric Automaster is a driving school based in Brăila, Romania.
-          Part of a marketing strategy, the prupose of this website is to grow up the popularity of the business.
+          Eric Automaster is a driving school based in Brăila, Romania. Part of
+          a marketing strategy, the prupose of this website is to grow up the
+          popularity of the business.
         </Paragraph>
 
-        <List ml={4} my={4}>
+        <List ml={{ base: 0, sm: 4 }} my={4}>
           <ListItem>
             <Meta>Website</Meta>
             <Text color="gray" display="inline">

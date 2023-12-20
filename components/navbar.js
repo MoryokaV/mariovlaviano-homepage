@@ -12,13 +12,10 @@ import {
   MenuButton,
   IconButton,
   useColorModeValue,
-  forwardRef,
-  extendTheme
+  forwardRef
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from 'components/theme-toggle-button'
-import { menuAnatomy } from '@chakra-ui/anatomy'
-import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href

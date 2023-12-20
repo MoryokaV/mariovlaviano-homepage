@@ -12,25 +12,30 @@ import thumbnail3 from 'public/images/projects/citybreak_04.png'
 const Work = () => {
   return (
     <Layout title="Visit Brăila">
-      <Container>
+      <Container px="0">
         <WorkTitle>
           City Break <Badge>2023-</Badge>
         </WorkTitle>
 
         <Paragraph>
-          City Break connects all of the cities of Romania into a single mobile app. The documentation process before
-          any city break trip is drastically simplified by the digitization and centralization of information. This app
-          is a fork of{' '}
+          City Break connects all of the cities of Romania into a single mobile
+          app. The documentation process before any city break trip is
+          drastically simplified by the digitization and centralization of
+          information. This app is a fork of{' '}
           <Link as={NextLink} href="/projects/visitbraila">
             Visit Brăila
           </Link>
           , a scaled product which will be transformed in a startup business.
         </Paragraph>
 
-        <List ml={4} my={4}>
+        <List ml={{ base: 0, sm: 4 }} my={4}>
           <ListItem>
             <Meta>Source</Meta>
-            <Link as={NextLink} target="_blank" href="https://github.com/moryokav/city-break">
+            <Link
+              as={NextLink}
+              target="_blank"
+              href="https://github.com/moryokav/city-break"
+            >
               https://github.com/moryokav/city-break
               <ExternalLinkIcon mx={2} />
             </Link>
@@ -45,7 +50,11 @@ const Work = () => {
           </ListItem>
           <ListItem>
             <Meta>Demo</Meta>
-            <Link as={NextLink} target="_blank" href="https://youtu.be/Uy1fnQCWw5E">
+            <Link
+              as={NextLink}
+              target="_blank"
+              href="https://youtu.be/Uy1fnQCWw5E"
+            >
               https://youtu.be/Uy1fnQCWw5E
               <ExternalLinkIcon mx={2} />
             </Link>

@@ -12,22 +12,28 @@ import thumbnail3 from 'public/images/projects/cosmeticsshop_04.png'
 const Work = () => {
   return (
     <Layout title="Cosmetics Shop">
-      <Container>
+      <Container px="0">
         <WorkTitle>
           eCommerce Cosmetics Shop<Badge></Badge>
         </WorkTitle>
 
         <Paragraph>
-          This was one of my first cross-platform mobile apps ever built. Started it as a side project to deepen the
-          knowledge about Flutter Framework. The idea of a cosmetics shop came from a business of a family friend. The
-          final product doesn't have a very high quality code, but the journey developing this app was full of new
-          concepts learned.
+          This was one of my first cross-platform mobile apps ever built.
+          Started it as a side project to deepen the knowledge about Flutter
+          Framework. The idea of a cosmetics shop came from a business of a
+          family friend. The final product doesn't have a very high quality
+          code, but the journey developing this app was full of new concepts
+          learned.
         </Paragraph>
 
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Source</Meta>
-            <Link as={NextLink} target="_blank" href="https://github.com/MoryokaV/eCommerce-Cosmetics-Shop">
+            <Link
+              as={NextLink}
+              target="_blank"
+              href="https://github.com/MoryokaV/eCommerce-Cosmetics-Shop"
+            >
               https://github.com/MoryokaV/eCommerce-Cosmetics-Shop
               <ExternalLinkIcon mx={2} />
             </Link>
