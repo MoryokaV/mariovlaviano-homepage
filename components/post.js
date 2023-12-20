@@ -21,6 +21,7 @@ import {
   AiOutlineLike,
   AiOutlineShareAlt
 } from 'react-icons/ai'
+import styled from '@emotion/styled'
 import { useState } from 'react'
 
 const INSTAGRAM_URL = 'https://www.instagram.com/mario.vlv/'
@@ -69,6 +70,11 @@ export const PostHeader = ({ date }) => (
     </VStack>
   </HStack>
 )
+
+export const PostParagraph = styled.p`
+  text-align: left;
+  text-indent: 1em;
+`
 
 export const PostImage = ({ src, alt, brightness, display }) => (
   <a data-fancybox="post-gallery" href={src.src}>
@@ -133,7 +139,7 @@ const ShareButton = () => {
                 px={4}
                 py={3}
               >
-                <HStack mb={2} color="gray.600">
+                <HStack mb={2} color="gray.500">
                   <AiOutlineInfoCircle />
                   <Heading as="h6" size="md">
                     Post URL copied to clipboard.

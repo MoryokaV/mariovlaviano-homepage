@@ -1,13 +1,21 @@
-import { Box, Container, VStack, Text, SimpleGrid } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  VStack,
+  Text,
+  SimpleGrid,
+  Link
+} from '@chakra-ui/react'
 import {
   PostButtons,
   PostHeader,
   PostImage,
+  PostParagraph,
   PostTitle
 } from '@/components/post'
 import Layout from '../../components/layouts/article'
-import Paragraph from '@/components/paragraph'
 import Fancybox from '@/libs/fancybox'
+import NextLink from 'next/link'
 
 import alma1 from 'public/images/posts/visitbraila/visitbraila1.jpg'
 import alma2 from 'public/images/posts/visitbraila/visitbraila3.jpg'
@@ -31,20 +39,55 @@ const Post = () => {
         >
           <Box p={4}>
             <PostHeader date="28 noiembrie, 2023"></PostHeader>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-              reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
-              ex esse exercitation amet. Nisi anim cupidatat excepteur officia.
-              Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet
-              voluptate voluptate dolor minim nulla est proident. Nostrud
-              officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex
-              occaecat reprehenderit commodo officia dolor Lorem duis laboris
-              cupidatat officia voluptate. Culpa proident adipisicing id nulla
-              nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua
-              reprehenderit commodo ex non excepteur duis sunt velit enim.
-              Voluptate laboris sint cupidatat ullamco ut ea consectetur et est
-              culpa et culpa duis.
-            </Paragraph>
+            <PostParagraph>
+              Pe parcursul a unui an și jumătate, am lucrat în parteneriat cu{' '}
+              <em>Primăria Municipiului Brăila</em> și{' '}
+              <em>Biblioteca Județeană &quot;Panait Istrati&quot;</em> la o
+              platformă de turism care să curpindă esența călătoriilor în orașul
+              nostru.{' '}
+              <Link target="_blank" as={NextLink} href="/projects/visitbraila">
+                Visit Brăila
+              </Link>{' '}
+              este aplicația oficială a municipiului Brăila, disponibilă pe{' '}
+              <Link
+                target="_blank"
+                as={NextLink}
+                href="https://play.google.com/store/apps/details?id=com.vmasoftware.visit_braila"
+              >
+                Google Play
+              </Link>{' '}
+              și{' '}
+              <Link
+                target="_blank"
+                as={NextLink}
+                href="https://apps.apple.com/ro/app/visit-br%C4%83ila/id6448944001"
+              >
+                AppStore
+              </Link>
+              . Veți descoperi atracții, hoteluri, restaurante, dar în același
+              timp, puteți lua pulsul evenimentelor și divertismentului local,
+              concerte live, festivaluri, expoziții tradiționale și culinare.
+            </PostParagraph>
+            <PostParagraph>
+              Lansarea oficială a aplicației a avut loc pe data de 28 noiembrie,
+              2023, în cadrul conferinței ITforEnery organizată de{' '}
+              <Link
+                target="_blank"
+                as={NextLink}
+                href="https://www.facebook.com/conafromania"
+              >
+                CONAF Romnânia
+              </Link>
+              . Tema evenimentului a fost digitalizarea, iar în sală au fost
+              prezenți consilieri și secretari de stat ai ministerelor de
+              specialiate.
+            </PostParagraph>
+            <PostParagraph>
+              Feedback-ul primit în urma publicării a fost unul foarte bun, mult
+              peste așteptările noastre. Am avut parte de numeroase reacții din
+              partea antreprenorilor locali, ce și-au dorit promovarea
+              afacerilor lor pe <em>Visit Brăila</em>.
+            </PostParagraph>
           </Box>
           <Fancybox>
             <VStack gap={1}>
@@ -92,12 +135,20 @@ const Post = () => {
         >
           <Box p={4}>
             <PostHeader date="28 noiembrie, 2023"></PostHeader>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-              reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
-              ex esse exercitation amet. Nisi anim cupidatat excepteur officia.
-              Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet
-            </Paragraph>
+            <PostParagraph>
+              În seara zilei de 28 noiembrie, după lansarea proiectului{' '}
+              <em>Visit Brăila</em>, am fost speaker in cadrul Galei Excelenței
+              în Leadership a{' '}
+              <Link
+                as={NextLink}
+                target="_blank"
+                href="https://www.facebook.com/profile.php?id=100069513885487"
+              >
+                CONAF Brăila
+              </Link>
+              . Am vorbit despre &quot;Cum e sa faci lucruri în Brăila, în
+              comunitățile mici și ce au ele diferit față de celelalte&quot;.
+            </PostParagraph>
           </Box>
           <iframe
             width="100%"
