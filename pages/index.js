@@ -253,7 +253,7 @@ const Page = () => {
             development.
           </Paragraph>
           <Box align="center" mt={3}>
-            <Link as={NextLink} href="mailto:mariovlaviano2005@yahoo.com">
+            <Link as={NextLink} href="mailto:contact@mariovlaviano.ro">
               <Button colorScheme="teal" leftIcon={<Icon as={IoMail} />}>
                 Send me an email
               </Button>
