@@ -1,10 +1,9 @@
 import { Box, Container, VStack, Text, SimpleGrid } from '@chakra-ui/react'
 import {
-  LikeButton,
+  PostButtons,
   PostHeader,
   PostImage,
-  PostTitle,
-  ShareButton
+  PostTitle
 } from '@/components/post'
 import Layout from '../../components/layouts/article'
 import Paragraph from '@/components/paragraph'
@@ -81,10 +80,7 @@ const Post = () => {
               display="none"
             ></PostImage>
           </Fancybox>
-          <SimpleGrid columns={[2]} p={2}>
-            <LikeButton></LikeButton>
-            <ShareButton></ShareButton>
-          </SimpleGrid>
+          <PostButtons />
         </Box>
 
         <Box
@@ -112,10 +108,7 @@ const Post = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
             allowfullscreen
           ></iframe>
-          <SimpleGrid columns={[2]} p={2}>
-            <LikeButton></LikeButton>
-            <ShareButton></ShareButton>
-          </SimpleGrid>
+          <PostButtons />
         </Box>
       </Container>
     </Layout>

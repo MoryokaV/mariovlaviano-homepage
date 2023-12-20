@@ -9,7 +9,8 @@ import {
   Button,
   useColorModeValue,
   useToast,
-  Heading
+  Heading,
+  SimpleGrid
 } from '@chakra-ui/react'
 import { TimeIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
@@ -86,7 +87,7 @@ export const PostImage = ({ src, alt, brightness, display }) => (
   </a>
 )
 
-export const LikeButton = () => {
+const LikeButton = () => {
   const [liked, like] = useState(false)
 
   return (
@@ -113,7 +114,7 @@ export const LikeButton = () => {
   )
 }
 
-export const ShareButton = () => {
+const ShareButton = () => {
   const toast = useToast()
   return (
     <Button
@@ -158,3 +159,10 @@ export const ShareButton = () => {
     </Button>
   )
 }
+
+export const PostButtons = () => (
+  <SimpleGrid columns={[2]} px={2} py={1}>
+    <LikeButton></LikeButton>
+    <ShareButton></ShareButton>
+  </SimpleGrid>
+)

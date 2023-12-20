@@ -19,7 +19,7 @@ const Projects = () => {
         <Heading as="h3" fontSize={20} mb={4}>
           Projects
         </Heading>
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1, 2]} gap={6}>
           <Section>
             <ProjectGridItem
               id="visitbraila"
@@ -68,7 +68,7 @@ const Projects = () => {
           </Heading>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1, 2]} gap={6}>
           <Section delay={0.3}>
             <ProjectGridItem
               id="bts"
