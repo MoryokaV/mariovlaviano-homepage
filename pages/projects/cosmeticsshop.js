@@ -26,7 +26,7 @@ const Work = () => {
           learned.
         </Paragraph>
 
-        <List ml={4} my={4}>
+        <List ml={{ base: 0, sm: 4 }} my={4}>
           <ListItem>
             <Meta>Source</Meta>
             <Link
