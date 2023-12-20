@@ -1,5 +1,37 @@
 import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
+import { menuAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(menuAnatomy.keys)
+
+const baseMenuStyle = definePartsStyle({
+  list: {
+    _dark: {
+      bg: '#202023'
+    },
+    _light: {
+      bg: '#fff'
+    }
+  },
+  item: {
+    _dark: {
+      _focus: {
+        bg: 'whiteAlpha.100'
+      },
+      bg: '#202023'
+    },
+    _light: {
+      _focus: {
+        bg: 'gray.100'
+      },
+      bg: '#fff'
+    }
+  }
+})
+
+const menuTheme = defineMultiStyleConfig({ baseStyle: baseMenuStyle })
 
 const styles = {
   global: props => ({
@@ -28,7 +60,8 @@ const components = {
       color: mode('#3d7aed', '#ff63c3')(props),
       textUnderlineOffset: 3
     })
-  }
+  },
+  Menu: menuTheme
 }
 
 const fonts = {
@@ -96,7 +129,7 @@ const semanticTokens = {
 
 const config = {
   initialColorMode: 'dark',
-  useSystemColorMode: true
+  useSystemColorMode: false
 }
 
 const theme = extendTheme({

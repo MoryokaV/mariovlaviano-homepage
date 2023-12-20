@@ -6,17 +6,19 @@ import {
   Link,
   Stack,
   Heading,
-  Flex,
   Menu,
   MenuItem,
   MenuList,
   MenuButton,
   IconButton,
   useColorModeValue,
-  forwardRef
+  forwardRef,
+  extendTheme
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from 'components/theme-toggle-button'
+import { menuAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -37,7 +39,9 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   )
 }
 
-const MenuLink = forwardRef((props, ref) => <Link ref={ref} as={NextLink} {...props} />)
+const MenuLink = forwardRef((props, ref) => (
+  <Link ref={ref} as={NextLink} {...props} />
+))
 
 const Navbar = props => {
   const { path } = props
@@ -52,7 +56,14 @@ const Navbar = props => {
       zIndex={2}
       {...props}
     >
-      <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="space-between">
+      <Container
+        display="flex"
+        p={2}
+        maxW="container.md"
+        wrap="wrap"
+        align="center"
+        justify="space-between"
+      >
         <Heading as="h1" size="lg" letterSpacing={'tighter'} mr={5}>
           <Logo />
         </Heading>
@@ -79,13 +90,18 @@ const Navbar = props => {
         <Box flex={1} align="right">
           <ThemeToggleButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazy id="navbar-menu">
-              <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
+            <Menu isLazy id="navbar-menu" variant="black">
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant="outline"
+                aria-label="Options"
+              />
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
                   About
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/Projects">
+                <MenuItem as={MenuLink} href="/projects">
                   Projects
                 </MenuItem>
                 <MenuItem as={MenuLink} href="/posts">
