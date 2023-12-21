@@ -59,6 +59,7 @@ export const PostHeader = ({ date }) => (
           fontSize="sm"
           target="_blank"
           fontWeight="semibold"
+          whiteSpace="nowrap"
         >
           + Follow
         </Link>
