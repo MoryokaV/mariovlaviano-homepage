@@ -122,7 +122,7 @@ const Page = () => {
           <BioSection>
             <BioYear>2022</BioYear>
             Created{' '}
-            <Link as={NextLink} href="/">
+            <Link as={NextLink} href="/posts/flutterlab">
               FlutterLab
             </Link>
             , a mobile development course for students with ages between 12 and
@@ -151,7 +151,7 @@ const Page = () => {
           </Heading>
           <Paragraph>
             Sports cars, Coffee, Art,{' '}
-            <Link as={NextLink} href="/">
+            <Link as={NextLink} href="/posts/maraton">
               Entrepreneurship
             </Link>
             , Biking, Music, Swimming, Public speaking

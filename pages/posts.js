@@ -23,7 +23,7 @@ const Posts = () => {
               title="Visit Brăila"
               thumbnail={thumbVisitBraila}
               alt="Visit Braila in newspaper"
-              href="/posts/visitbraila"
+              id="visitbraila"
             >
               Lansarea aplicației oficiale a orașului
             </PostGridItem>
@@ -33,7 +33,7 @@ const Posts = () => {
               title="Maratonul pentru educație antreprenorială"
               thumbnail={thumbMaraton}
               alt="Maratonul pentru educatie antreprenoriala"
-              href="/posts/maraton"
+              id="maraton"
             >
               Câștigătorul etapei naționale
             </PostGridItem>
@@ -43,7 +43,7 @@ const Posts = () => {
               title="Brăila Tech Sprint 2023"
               thumbnail={thumbBTS}
               alt="BrailaTechSprint"
-              href="/posts/bts"
+              id="bts"
             >
               Organizarea primului hackathon din Brăila
             </PostGridItem>
@@ -53,7 +53,7 @@ const Posts = () => {
               title="Antena 3 CNN"
               thumbnail={thumbAntena}
               alt="Antena 3"
-              href="/posts/antena3"
+              id="antena3"
             >
               Invitat la emisiunea Income Magazine
             </PostGridItem>
@@ -63,7 +63,7 @@ const Posts = () => {
               title="FlutterLab"
               thumbnail={thumbFlutterLab}
               alt="FlutterLab"
-              href="/posts/flutterlab"
+              id="flutterlab"
             >
               Lector și inițiator al unui curs de Flutter
             </PostGridItem>

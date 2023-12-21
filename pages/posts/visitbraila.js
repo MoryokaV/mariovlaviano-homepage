@@ -116,12 +116,8 @@ const Post = () => {
                 </Box>
               </SimpleGrid>
             </VStack>
-            <PostImage src={ziar} alt="Visit Braila" display="none"></PostImage>
-            <PostImage
-              src={alma2}
-              alt="Visit Braila"
-              display="none"
-            ></PostImage>
+            <PostImage src={ziar} alt="Visit Braila" display="none" />
+            <PostImage src={alma2} alt="Visit Braila" display="none" />
           </Fancybox>
           <PostButtons />
         </Box>

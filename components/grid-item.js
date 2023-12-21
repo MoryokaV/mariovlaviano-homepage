@@ -3,9 +3,9 @@ import Image from 'next/image'
 import NextLink from 'next/link'
 import { Global } from '@emotion/react'
 
-export const PostGridItem = ({ children, href, title, thumbnail }) => (
+export const PostGridItem = ({ children, id, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
-    <LinkBox cursor="pointer">
+    <LinkBox scroll={true} cursor="pointer" as={NextLink} href={`/posts/${id}`}>
       <Image
         src={thumbnail}
         alt={title}
@@ -17,8 +17,10 @@ export const PostGridItem = ({ children, href, title, thumbnail }) => (
           height: '190px'
         }}
       />
-      <LinkOverlay href={href}>
-        <Text mt={2}>{title}</Text>
+      <LinkOverlay as="div" href={`/posts/${id}`}>
+        <Text mt={2} fontSize={18}>
+          {title}
+        </Text>
       </LinkOverlay>
       <Text fontSize={14}>{children}</Text>
     </LinkBox>
