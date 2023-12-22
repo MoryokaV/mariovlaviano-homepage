@@ -6,8 +6,7 @@ import {
   Text,
   chakra,
   shouldForwardProp,
-  useColorModeValue,
-  Image
+  useColorModeValue
 } from '@chakra-ui/react'
 import { motion, isValidMotionProp } from 'framer-motion'
 import { TmuxStatusline } from './tmux'
@@ -17,13 +16,8 @@ import { Parallax } from './parallax'
 
 const typeSpeedFast = 110
 const typeSpeedSlow = 160
-/*
 const startDelayFast = 1200
 const startDelaySlow = 1700
-*/
-
-const startDelayFast = 200
-const startDelaySlow = 700
 
 const TerminalWindow = chakra(motion.div, {
   shouldForwardProp: prop => isValidMotionProp(prop) || shouldForwardProp(prop),

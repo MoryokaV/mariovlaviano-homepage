@@ -40,22 +40,22 @@ const Posts = () => {
           </Section>
           <Section delay={0.1}>
             <PostGridItem
-              title="Brăila Tech Sprint 2023"
-              thumbnail={thumbBTS}
-              alt="BrailaTechSprint"
-              id="bts"
-            >
-              Organizarea primului hackathon din Brăila
-            </PostGridItem>
-          </Section>
-          <Section delay={0.1}>
-            <PostGridItem
               title="Antena 3 CNN"
               thumbnail={thumbAntena}
               alt="Antena 3"
               id="antena3"
             >
               Invitat la emisiunea Income Magazine
+            </PostGridItem>
+          </Section>
+          <Section delay={0.1}>
+            <PostGridItem
+              title="Brăila Tech Sprint 2023"
+              thumbnail={thumbBTS}
+              alt="BrailaTechSprint"
+              id="bts"
+            >
+              Organizarea primului hackathon din Brăila
             </PostGridItem>
           </Section>
           <Section delay={0.2}>
