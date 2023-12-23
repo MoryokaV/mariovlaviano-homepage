@@ -28,6 +28,7 @@ import {
 
 import thumbnail1 from '../public/images/mario 3.jpg'
 import thumbnail2 from '../public/images/mario 2.jpg'
+import thumbnail3 from '../public/images/macbook_coffee.JPG'
 
 const Page = () => {
   return (
@@ -227,7 +228,7 @@ const Page = () => {
           <SimpleGrid mt={2} columns={{ sm: 2 }} gap={4}>
             <Image
               as={NextImage}
-              src={thumbnail1}
+              src={thumbnail3}
               borderRadius={12}
               fit="cover"
               height="200px"
