@@ -20,9 +20,9 @@ const Work = () => {
           A clone o cloud storage concept (e.g. Google Drive, iCloud). This was
           one of my first significantly bigger project since I started
           programming. Developing this desktop app I have practiced more the P2P
-          File Sharing concept in C#. I'm not identifing as a desktop app
-          developer yet :) and I'm not planning this in the near future, but, as
-          always, the experience was welcomed.
+          File Sharing concept in C#. I&apos;m not identifing as a desktop app
+          developer yet :) and I&apos;m not planning this in the near future,
+          but, as always, the experience was welcomed.
         </Paragraph>
 
         <List ml={{ base: 0, sm: 4 }} my={4}>

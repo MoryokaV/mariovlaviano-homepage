@@ -21,7 +21,7 @@ const Work = () => {
           This was one of my first cross-platform mobile apps ever built.
           Started it as a side project to deepen the knowledge about Flutter
           Framework. The idea of a cosmetics shop came from a business of a
-          family friend. The final product doesn't have a very high quality
+          family friend. The final product doesn&apos;t have a very high quality
           code, but the journey developing this app was full of new concepts
           learned.
         </Paragraph>
