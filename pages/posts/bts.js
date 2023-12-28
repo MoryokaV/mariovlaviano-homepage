@@ -1,5 +1,12 @@
 import Layout from '@/components/layouts/article'
-import { Container, Box, SimpleGrid, VStack, Text } from '@chakra-ui/react'
+import {
+  Container,
+  Link,
+  Box,
+  SimpleGrid,
+  VStack,
+  Text
+} from '@chakra-ui/react'
 import {
   PostTitle,
   PostHeader,
@@ -8,6 +15,7 @@ import {
   PostParagraph
 } from '@/components/post'
 import Fancybox from '@/libs/fancybox'
+import NextLink from 'next/link'
 
 import bts1 from '../../public/images/posts/bts/bts1.jpg'
 import bts2 from '../../public/images/posts/bts/bts2.jpg'
@@ -32,8 +40,26 @@ const Post = () => {
           <Box p={4}>
             <PostHeader date="8 aprilie, 2023"></PostHeader>
             <PostParagraph>
-              Lorem ipsum dolor sit amet, qui minim labore adipisicing minim
-              sint cillum sint consectetur cupidatat.
+              BrăilaTechSprint este un hackathon de 24h dedicat elevilor de
+              liceu de toate vârstele, ce are loc la Brăila. Alături de
+              conducerea bibliotecii județene &quot;Panait Istrati&quot; și
+              sprijinul Consiliului Județean Brăila, am inițiat acest concurs la
+              început de 2023, ușor sceptic în ceea ce privea numărul
+              participanților. Prima ediție a BTS a fost un real succces, așa că
+              pentru 2024 lucrăm la o ediție regională, în care invităm județele
+              vecine să ia parte în concurs. În calitate de jurat, am analizat
+              10 proiecte ambițioase dezvoltate pe parcursul unei singure zile,
+              vizand domenii diferite: sănătate, nutriție, comerț, educație etc.
+            </PostParagraph>
+            <PostParagraph>
+              Website-ul oficial al se poate acesa la:{' '}
+              <Link
+                as={NextLink}
+                href="https://hackathon.bjbraila.ro/"
+                target="_blank"
+              >
+                https://hackathon.bjbraila.ro/
+              </Link>
             </PostParagraph>
           </Box>
 
