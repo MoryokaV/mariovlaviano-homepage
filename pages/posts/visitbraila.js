@@ -70,7 +70,7 @@ const Post = () => {
             </PostParagraph>
             <PostParagraph>
               Lansarea oficială a aplicației a avut loc pe data de 28 noiembrie,
-              2023, în cadrul conferinței ITforEnery organizată de{' '}
+              2023, în cadrul conferinței <em>ITforEnergy</em> organizată de{' '}
               <Link
                 target="_blank"
                 as={NextLink}
