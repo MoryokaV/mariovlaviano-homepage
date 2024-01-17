@@ -18,11 +18,13 @@ export const PostGridItem = ({ children, id, title, thumbnail }) => (
         }}
       />
       <LinkOverlay as="div" href={`/posts/${id}`}>
-        <Text mt={2} fontSize={18}>
+        <Text mt={2} fontSize={18} fontWeight="medium">
           {title}
         </Text>
       </LinkOverlay>
-      <Text fontSize={14}>{children}</Text>
+      <Text fontSize={14} opacity="70%">
+        {children}
+      </Text>
     </LinkBox>
   </Box>
 )
@@ -46,11 +48,13 @@ export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
         }}
       />
       <LinkOverlay as="div" href={`/projects/${id}`}>
-        <Text mt={2} fontSize={20}>
+        <Text mt={2} fontSize={20} fontWeight="medium">
           {title}
         </Text>
       </LinkOverlay>
-      <Text fontSize={14}>{children}</Text>
+      <Text fontSize={14} opacity="85%">
+        {children}
+      </Text>
     </LinkBox>
   </Box>
 )

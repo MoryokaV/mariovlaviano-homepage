@@ -26,9 +26,8 @@ import {
   IoLogoLinkedin
 } from 'react-icons/io5'
 
-import thumbnail1 from '../public/images/mario 3.jpg'
+import thumbnail1 from '../public/images/macbook_coffee.JPG'
 import thumbnail2 from '../public/images/mario 2.jpg'
-import thumbnail3 from '../public/images/macbook_coffee.JPG'
 
 const Page = () => {
   return (
@@ -228,7 +227,7 @@ const Page = () => {
           <SimpleGrid mt={2} columns={{ sm: 2 }} gap={4}>
             <Image
               as={NextImage}
-              src={thumbnail3}
+              src={thumbnail1}
               borderRadius={12}
               fit="cover"
               height="200px"

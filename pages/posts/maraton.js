@@ -17,12 +17,12 @@ import {
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
-import maraton1 from '../../public/images/posts/maraton/maraton2.JPG'
-import maraton2 from '../../public/images/posts/maraton/maraton1.JPG'
-import maraton3 from '../../public/images/posts/maraton/maraton3.JPG'
-import maraton4 from '../../public/images/posts/maraton/maraton4.JPG'
-import maraton5 from '../../public/images/posts/maraton/maraton5.JPG'
-import maraton6 from '../../public/images/posts/maraton/maraton.JPG'
+import maraton1 from '../../public/images/posts/maraton/maraton3.JPG'
+import maraton2 from '../../public/images/posts/maraton/maraton2.JPG'
+import maraton3 from '../../public/images/posts/maraton/maraton4.JPG'
+import maraton4 from '../../public/images/posts/maraton/maraton5.JPG'
+import maraton5 from '../../public/images/posts/maraton/maraton6.JPG'
+import maraton6 from '../../public/images/posts/maraton/maraton1.JPG'
 
 import licee1 from '../../public/images/posts/maraton/licee1.JPG'
 import licee2 from '../../public/images/posts/maraton/licee2.JPG'

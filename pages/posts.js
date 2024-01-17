@@ -4,7 +4,7 @@ import Section from '@/components/section'
 import { PostGridItem } from '@/components/grid-item'
 
 import thumbVisitBraila from '../public/images/posts/visitbraila.jpg'
-import thumbMaraton from '../public/images/posts/maraton.jpg'
+import thumbMaraton from '../public/images/posts/maraton1.jpg'
 import thumbBTS from '../public/images/posts/bts.jpg'
 import thumbAntena from '../public/images/posts/antena3.jpg'
 import thumbFlutterLab from '../public/images/posts/flutterlab.jpg'
