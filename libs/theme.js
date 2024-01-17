@@ -36,7 +36,7 @@ const menuTheme = defineMultiStyleConfig({ baseStyle: baseMenuStyle })
 const styles = {
   global: props => ({
     body: {
-      bg: mode('#f0e7db', '#202023')(props)
+      bg: mode('#f0e7db', '#1a1a1f')(props)
     }
   })
 }
@@ -122,7 +122,7 @@ const semanticTokens = {
     },
     postBg: {
       default: '#fff',
-      _dark: '#27272b'
+      _dark: '#1f1f23'
     }
   }
 }
