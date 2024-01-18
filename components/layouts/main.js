@@ -7,7 +7,7 @@ import { Desk } from '../desk'
 
 const Main = ({ children, router }) => {
   return (
-    <Box as="main" pb={6}>
+    <Box as="main" pb={6} minH="100vh" display="flex" flexDirection="column">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Mario Vlaviano - Homepage</title>
