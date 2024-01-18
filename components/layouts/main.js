@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Hero from '../hero'
 import Navbar from '../navbar'
 import Footer from '../footer'
+import { Desk } from '../desk'
 
 const Main = ({ children, router }) => {
   return (
@@ -13,8 +14,11 @@ const Main = ({ children, router }) => {
       </Head>
 
       <Navbar path={router.route} />
-      <Container maxW="container.md" pt={14}>
-        <Hero />
+      <Container
+        maxW={router.route !== '/tools' ? 'container.md' : '750px'}
+        pt={14}
+      >
+        {router.route !== '/tools' ? <Hero /> : <Desk />}
         {children}
       </Container>
 
