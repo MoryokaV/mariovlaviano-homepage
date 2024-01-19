@@ -11,6 +11,8 @@ const Main = ({ children, router }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Mario Vlaviano - Homepage</title>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
 
       <Navbar path={router.route} />
