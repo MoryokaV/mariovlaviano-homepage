@@ -26,6 +26,7 @@ import {
   IoLogoLinkedin
 } from 'react-icons/io5'
 
+import profile_pic from '../public/images/mario.jpg'
 import thumbnail1 from '../public/images/macbook_coffee.JPG'
 import thumbnail2 from '../public/images/mario 2.jpg'
 
@@ -60,14 +61,16 @@ const Page = () => {
             align="center"
           >
             <Image
+              as={NextImage}
               borderColor="whiteAlpha.800"
               borderWidth={2}
               borderStyle="solid"
               maxWidth="110px"
               display="inline-block"
               borderRadius="full"
-              src="/images/mario.jpg"
+              src={profile_pic}
               alt="Profile picture"
+              loading='eager'
             />
           </Box>
         </Box>
