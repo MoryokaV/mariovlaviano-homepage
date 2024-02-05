@@ -70,7 +70,7 @@ const Page = () => {
               borderRadius="full"
               src={profile_pic}
               alt="Profile picture"
-              loading='eager'
+              loading="eager"
             />
           </Box>
         </Box>
@@ -80,7 +80,7 @@ const Page = () => {
             About
           </Heading>
           <Paragraph>
-            Mario is a software developer based in{' '}
+            I&quot;m a software developer based in{' '}
             <Link
               as={NextLink}
               href="https://ro.wikipedia.org/wiki/Br%C4%83ila"
@@ -89,12 +89,12 @@ const Page = () => {
             >
               Brăila, Romania
             </Link>
-            , with a passion for learning new technologies. All of his projects
+            , with a passion for learning new technologies. All of my projects
             are built from the ground up, from planning and designing all the
-            way to solving real-life problems with code. When not in front of
-            his desk, he likes to spend time outside around cars. Currently, he
-            is living of helping small local businesses scale up by improving
-            their marketing and productivity stategies using the latest digital
+            way to solving real-life problems with code. When not in front of my
+            desk, I like to spend time outside around cars. Currently, I&quot;
+            living of helping small local businesses scale up by improving their
+            marketing and productivity stategies using the latest digital
             solutions in the market.
           </Paragraph>
           <Box align="center" my={4}>
