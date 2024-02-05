@@ -80,7 +80,7 @@ const Page = () => {
             About
           </Heading>
           <Paragraph>
-            I&quot;m a software developer based in{' '}
+            I&apos;m a software developer based in{' '}
             <Link
               as={NextLink}
               href="https://ro.wikipedia.org/wiki/Br%C4%83ila"
@@ -92,7 +92,7 @@ const Page = () => {
             , with a passion for learning new technologies. All of my projects
             are built from the ground up, from planning and designing all the
             way to solving real-life problems with code. When not in front of my
-            desk, I like to spend time outside around cars. Currently, I&quot;
+            desk, I like to spend time outside around cars. Currently, I&apos;
             living of helping small local businesses scale up by improving their
             marketing and productivity stategies using the latest digital
             solutions in the market.
