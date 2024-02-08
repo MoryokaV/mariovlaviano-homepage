@@ -1,8 +1,9 @@
-import { Container, Badge, List, ListItem, Text } from '@chakra-ui/react'
+import { Container, Link, Badge, List, ListItem, Text } from '@chakra-ui/react'
 import { WorkTitle, Meta, WorkImage } from '../../components/work'
 import Paragraph from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
+import NextLink from 'next/link'
 
 import thumbnail1 from 'public/images/projects/ericautomaster_02.png'
 import thumbnail2 from 'public/images/projects/ericautomaster_03.png'
@@ -24,10 +25,15 @@ const Work = () => {
         <List ml={{ base: 0, sm: 4 }} my={4}>
           <ListItem>
             <Meta>Website</Meta>
-            <Text color="gray" display="inline">
-              link comming soon
+
+            <Link
+              as={NextLink}
+              target="_blank"
+              href="https://ericautomaster.ro"
+            >
+              https://ericautomaster.ro
               <ExternalLinkIcon mx={2} />
-            </Text>
+            </Link>
           </ListItem>
           <ListItem>
             <Meta>Stack</Meta>

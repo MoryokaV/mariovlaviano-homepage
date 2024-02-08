@@ -10,7 +10,6 @@ import thumbCosmeticsShop from '../public/images/projects/cosmeticsshop_01.jpg'
 import thumbBTS from '../public/images/projects/bts_01.jpg'
 import thumbEricAutomaster from '../public/images/projects/ericautomaster_01.jpg'
 import thumbBarberEF from '../public/images/projects/barberef_01.jpg'
-import thumbVelocity from '../public/images/projects/velocity_01.jpg'
 
 const Projects = () => {
   return (
@@ -94,15 +93,6 @@ const Projects = () => {
               thumbnail={thumbBarberEF}
             >
               Local man&women barber shop landing page
-            </ProjectGridItem>
-          </Section>
-          <Section delay={0.4}>
-            <ProjectGridItem
-              id="velocity"
-              title="Velocity Robotics"
-              thumbnail={thumbVelocity}
-            >
-              High school robotics team presentation as a web page
             </ProjectGridItem>
           </Section>
         </SimpleGrid>
