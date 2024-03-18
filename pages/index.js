@@ -1,5 +1,6 @@
 import {
   Box,
+  Text,
   Container,
   Heading,
   useColorModeValue,
@@ -9,7 +10,8 @@ import {
   List,
   ListItem,
   Icon,
-  SimpleGrid
+  SimpleGrid,
+  OrderedList
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import NextLink from 'next/link'
@@ -25,6 +27,7 @@ import {
   IoLogoGithub,
   IoLogoLinkedin
 } from 'react-icons/io5'
+import { SkillIcon, SkillTitle } from '@/components/skill'
 
 import profile_pic from '../public/images/mario.jpg'
 import thumbnail1 from '../public/images/macbook_coffee.JPG'
@@ -112,6 +115,74 @@ const Page = () => {
 
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
+            Technical skills
+          </Heading>
+          <OrderedList>
+            <ListItem mb={4} fontWeight="bold">
+              <SkillTitle>
+                Cross-platform mobile development{' '}
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg" />
+              </SkillTitle>
+              <Paragraph>
+                3+ years experience with developing mobile apps with Flutter
+                from scratch. Production-ready code with apps published on
+                Google Play and App Store
+              </Paragraph>
+            </ListItem>
+            <ListItem mb={4} fontWeight="bold">
+              <SkillTitle>
+                Full-stack web development{' '}
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+              </SkillTitle>
+              <Paragraph>
+                Created custom landing pages for small local businesses and
+                events. Build, style and deploy static websites according to
+                brand identity and business needs.
+              </Paragraph>
+
+              <Box display="flex" gap={2} my={2}>
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+              </Box>
+              <Paragraph>
+                Build custom modern admin pages to manage databases for mobile
+                apps. Scalable REST APIs with Express.js or Flask that perform
+                well even on high traffic.
+              </Paragraph>
+              <Box display="flex" gap={2} my={2}>
+                <SkillIcon
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+                  invertOnDark={true}
+                />
+                <SkillIcon
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"
+                  invertOnDark={true}
+                />
+              </Box>
+            </ListItem>
+            <ListItem fontWeight="bold">
+              <SkillTitle>
+                NoSQL Databases{' '}
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
+                <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" />
+              </SkillTitle>
+              <Paragraph>
+                Using non-relational databases to build fast while maintaining
+                stability.
+              </Paragraph>
+            </ListItem>
+          </OrderedList>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
             Bio
           </Heading>
           <BioSection>
@@ -128,12 +199,12 @@ const Page = () => {
             <Link as={NextLink} href="/posts/flutterlab">
               FlutterLab
             </Link>
-            , a mobile development course for students with ages between 12 and
-            18 meant to spark interest in programming.
+            , a mobile development course for students meant to spark interest
+            in programming.
           </BioSection>
           <BioSection>
             <BioYear>2023</BioYear>
-            Organized the first hackathon in my community
+            Organized the first hackathon in my home town
           </BioSection>
           <BioSection>
             <BioYear>2023</BioYear>
@@ -143,12 +214,12 @@ const Page = () => {
             </Link>
           </BioSection>
           <BioSection>
-            <BioYear>2022 to present</BioYear>
-            Working on personal projects
+            <BioYear>present</BioYear>
+            Looking for new contracts
           </BioSection>
         </Section>
 
-        <Section delay={0.3}>
+        <Section delay={0.4}>
           <Heading as="h3" variant="section-title">
             I ♥
           </Heading>
@@ -161,7 +232,7 @@ const Page = () => {
           </Paragraph>
         </Section>
 
-        <Section delay={0.4}>
+        <Section delay={0.5}>
           <Heading as="h3" variant="section-title">
             On the web
           </Heading>
@@ -247,7 +318,7 @@ const Page = () => {
           </SimpleGrid>
         </Section>
 
-        <Section delay={0.5}>
+        <Section delay={0.6}>
           <Heading as="h3" variant="section-title">
             Reach out
           </Heading>
