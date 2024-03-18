@@ -28,7 +28,7 @@ const Tools = () => {
           <hr />
           <UnorderedList mt={3}>
             <ListItem>MacBook Air M1, late 2020</ListItem>
-            <ListItem>Lenovo ThinkPad X1 Carbon Gen 7</ListItem>
+            <ListItem>Lenovo ThinkPad X1 Carbon Gen 6</ListItem>
           </UnorderedList>
         </Box>
         <Box>

@@ -1,4 +1,4 @@
-import { ListItem, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import NextImage from 'next/image'
 
