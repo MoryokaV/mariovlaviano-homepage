@@ -17,16 +17,16 @@ import {
 import Fancybox from '@/libs/fancybox'
 import NextLink from 'next/link'
 
-import bts1 from '../../public/images/posts/bts/bts1.jpg'
-import bts2 from '../../public/images/posts/bts/bts2.jpg'
-import bts3 from '../../public/images/posts/bts/bts3.jpg'
-import bts4 from '../../public/images/posts/bts/bts4.jpg'
-import bts5 from '../../public/images/posts/bts/bts5.jpg'
-import bts6 from '../../public/images/posts/bts/bts6.jpg'
+import bts1 from '../../public/images/posts/bts2024/bts1.JPG'
+import bts2 from '../../public/images/posts/bts2024/bts2.JPG'
+import bts3 from '../../public/images/posts/bts2024/bts3.JPG'
+import bts4 from '../../public/images/posts/bts2024/bts4.JPG'
+import bts5 from '../../public/images/posts/bts2024/bts5.JPG'
+import bts6 from '../../public/images/posts/bts2024/bts6.jpg'
 
 const Post = () => {
   return (
-    <Layout title="Brăila Tech Sprint 2023">
+    <Layout title="Brăila Tech Sprint 2024">
       <Container px="0">
         <PostTitle />
 
@@ -38,21 +38,23 @@ const Post = () => {
           mb={6}
         >
           <Box p={4}>
-            <PostHeader date="8 aprilie, 2023"></PostHeader>
+            <PostHeader date="24 februarie, 2024"></PostHeader>
             <PostParagraph>
-              BrăilaTechSprint este un hackathon de 24h dedicat elevilor de
-              liceu de toate vârstele, ce are loc la Brăila. Alături de
-              conducerea bibliotecii județene &quot;Panait Istrati&quot; și
-              sprijinul Consiliului Județean Brăila, am inițiat acest concurs la
-              început de 2023, ușor sceptic în ceea ce privea numărul
-              participanților. Prima ediție a BTS a fost un real succces, așa că
-              pentru 2024 lucrăm la o ediție regională, în care invităm județele
-              vecine să ia parte în concurs. În calitate de jurat, am analizat
-              10 proiecte ambițioase dezvoltate pe parcursul unei singure zile,
-              vizand domenii diferite: sănătate, nutriție, comerț, educație etc.
+              Brăila Tech Sprint 2024 reprezintă a doua ediție a unui maraton de
+              programare dedicat elevilor din regiunea de sud-est a țării pentru
+              a-și dovedi aptitudinile tehnice, creative, antreprenoriale,
+              sociale, oratorii etc.
             </PostParagraph>
             <PostParagraph>
-              Website-ul oficial al se poate acesa la:{' '}
+              Echipa de organizare a muncit 2 luni ca să atragă în concurs 30 de
+              participanți, 4 jurați și 23 de sponsori. Astfel, am reușit să
+              demonstrăm că există suficient sprijin din partea antreprenorilor,
+              instituțiilor și organizațiilor locale pentru ca orice idee să
+              devină realitate, este nevoie doar de câteva persoane care să se
+              dedice intru totul implementării acesteia.
+            </PostParagraph>
+            <PostParagraph>
+              Website-ul oficial al competiției se poate acesa la:{' '}
               <Link
                 as={NextLink}
                 href="https://hackathon.bjbraila.ro/"
@@ -66,12 +68,12 @@ const Post = () => {
           <Fancybox>
             <VStack gap={1}>
               <SimpleGrid columns={[2]} gap={1} w="full">
-                <PostImage src={bts1} alt="Braila Tech Sprint 2023" />
-                <PostImage src={bts2} alt="Braila Tech Sprint 2023" />
+                <PostImage src={bts1} alt="Braila Tech Sprint 2024" />
+                <PostImage src={bts2} alt="Braila Tech Sprint 2024" />
               </SimpleGrid>
               <SimpleGrid columns={[3]} gap={1} w="full">
-                <PostImage src={bts4} alt="Braila Tech Sprint 2023" />
-                <PostImage src={bts3} alt="Braila Tech Sprint 2023" />
+                <PostImage src={bts4} alt="Braila Tech Sprint 2024" />
+                <PostImage src={bts3} alt="Braila Tech Sprint 2024" />
                 <Box position="relative">
                   <Text
                     position="absolute"
@@ -88,7 +90,7 @@ const Post = () => {
                   </Text>
                   <PostImage
                     src={bts5}
-                    alt="Braila Tech Sprint 2023"
+                    alt="Braila Tech Sprint 2024"
                     brightness="40%"
                   />
                 </Box>
@@ -96,7 +98,7 @@ const Post = () => {
             </VStack>
             <PostImage
               src={bts6}
-              alt="Braila Tech Sprint 2023"
+              alt="Braila Tech Sprint 2024"
               display="none"
             />
           </Fancybox>

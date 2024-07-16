@@ -10,7 +10,6 @@ export const PostGridItem = ({ children, id, title, thumbnail }) => (
         src={thumbnail}
         alt={title}
         className="grid-item-thumbnail"
-        placeholder="blur"
         loading="lazy"
         style={{
           objectFit: 'cover',
@@ -41,7 +40,6 @@ export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
         src={thumbnail}
         alt={title}
         className="grid-item-thumbnail"
-        placeholder="blur"
         style={{
           objectFit: 'cover',
           height: '160px'
