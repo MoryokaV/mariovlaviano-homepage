@@ -1,6 +1,5 @@
 import {
   Box,
-  Text,
   Container,
   Heading,
   useColorModeValue,

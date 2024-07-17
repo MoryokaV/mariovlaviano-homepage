@@ -17,6 +17,8 @@ const Main = ({ children, router }) => {
           content="Mario Vlaviano is a software developer based in Romania with a passion for learning new technologies."
         />
 
+        <link rel="canonical" href="https://mariovlaviano.ro" />
+
         <meta property="og:site_name" content="Mario Vlaviano" />
         <meta name="og:title" content="Mario Vlaviano" />
         <meta property="og:type" content="website" />
