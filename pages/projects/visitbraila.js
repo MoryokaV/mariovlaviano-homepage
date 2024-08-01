@@ -68,7 +68,7 @@ const Work = () => {
           </ListItem>
           <ListItem>
             <Meta>Stack</Meta>
-            <span>Flutter, Python, Flask, MongoDB, jQuery, Bootstrap</span>
+            <span>Flutter, TypeScript, MongoDB, Express, React, Bootstrap</span>
           </ListItem>
           <ListItem>
             <Meta>News</Meta>
