@@ -5,21 +5,22 @@ import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
 
-import thumbnail1 from 'public/images/projects/ericautomaster_02.png'
-import thumbnail2 from 'public/images/projects/ericautomaster_03.png'
+import thumbnail1 from 'public/images/projects/upscale_02.png'
+import thumbnail2 from 'public/images/projects/upscale_03.png'
 
 const Work = () => {
   return (
-    <Layout title="Ericautomaster">
+    <Layout title="Upscale Smart Consulting">
       <Container px="0">
         <WorkTitle>
-          Eric Automaster landing page <Badge>2023</Badge>
+          Upscale Smart Consulting website <Badge>2024</Badge>
         </WorkTitle>
 
         <Paragraph>
-          Eric Automaster is a driving school based in Brăila, Romania. Part of
-          a marketing strategy, the prupose of this website is to grow up the
-          popularity of the business.
+          Upscale Smart Consulting is a consultancy firm that helps business
+          owners get funds faster. The website is meant to inform clients about
+          the services that the agency provides. The blog section shows some
+          tips&tricks about every available funds you can access.
         </Paragraph>
 
         <List ml={{ base: 0, sm: 4 }} my={4}>
@@ -29,20 +30,20 @@ const Work = () => {
             <Link
               as={NextLink}
               target="_blank"
-              href="https://ericautomaster.ro"
+              href="https://upscale-consulting.ro"
             >
-              https://ericautomaster.ro
+              https://upscale-consulting.ro
               <ExternalLinkIcon mx={2} />
             </Link>
           </ListItem>
           <ListItem>
             <Meta>Stack</Meta>
-            <span>HTML, CSS, Bootstrap 5</span>
+            <span>Wordpress, Elementor</span>
           </ListItem>
         </List>
 
-        <WorkImage src={thumbnail1} alt="Eric Automaster" />
-        <WorkImage src={thumbnail2} alt="Eric Automaster" />
+        <WorkImage src={thumbnail1} alt="Upscale Smart Consulting website" />
+        <WorkImage src={thumbnail2} alt="Upscale Smart Consulting website" />
       </Container>
     </Layout>
   )

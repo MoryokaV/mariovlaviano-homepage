@@ -3,6 +3,8 @@ import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Section from '@/components/section'
 import { PostGridItem } from '@/components/grid-item'
 
+import thumbBM from '../public/images/posts/bm.jpeg'
+import thumbZF from '../public/images/posts/zf.jpeg'
 import thumbBTS2024 from '../public/images/posts/bts2024.JPG'
 import thumbVisitBraila from '../public/images/posts/visitbraila.jpg'
 import thumbMaraton from '../public/images/posts/maraton1.jpg'
@@ -19,6 +21,26 @@ const Posts = () => {
         </Heading>
 
         <SimpleGrid columns={[1, 2]} gap={6}>
+          <Section>
+            <PostGridItem
+              title="Business Magazin"
+              thumbnail={thumbBM}
+              alt="Business Magazin 2024"
+              id="business-magazin"
+            >
+              Articol în revista Business Magazin
+            </PostGridItem>
+          </Section>
+          <Section>
+            <PostGridItem
+              title="Ziarul Financiar"
+              thumbnail={thumbZF}
+              alt="Ziarul Financiar 2024"
+              id="zf"
+            >
+              Articol în Ziarul Financiar
+            </PostGridItem>
+          </Section>
           <Section>
             <PostGridItem
               title="Brăila Tech Sprint 2024"

@@ -8,6 +8,7 @@ import thumbCityBreak from '../public/images/projects/citybreak_01.jpg'
 import thumbCloudStorage from '../public/images/projects/cloudstorage_01.jpg'
 import thumbCosmeticsShop from '../public/images/projects/cosmeticsshop_01.jpg'
 import thumbBTS from '../public/images/projects/bts_01.jpg'
+import thumbUpscale from '../public/images/projects/upscale_01.png'
 import thumbEricAutomaster from '../public/images/projects/ericautomaster_01.jpg'
 import thumbBarberEF from '../public/images/projects/barberef_01.jpg'
 
@@ -70,6 +71,15 @@ const Projects = () => {
         <SimpleGrid columns={[1, 2]} gap={6}>
           <Section delay={0.3}>
             <ProjectGridItem
+              id="upscale-consulting"
+              title="Upscale Smart Consulting"
+              thumbnail={thumbUpscale}
+            >
+              Presentation website for a non-reimbursable funds consultancy firm
+            </ProjectGridItem>
+          </Section>
+          <Section delay={0.3}>
+            <ProjectGridItem
               id="bts"
               title="Brăila Tech Sprint"
               thumbnail={thumbBTS}
@@ -77,7 +87,7 @@ const Projects = () => {
               Official website of the eastern Romania hackathon
             </ProjectGridItem>
           </Section>
-          <Section delay={0.3}>
+          <Section delay={0.4}>
             <ProjectGridItem
               id="ericautomaster"
               title="Eric Automaster"
